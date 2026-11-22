@@ -1,0 +1,8 @@
+site_id,meter_id,year,month,units,status,sanctioned_load_kw,electricity_charges,subsidy,taxes,current_bill,source
+H002,H002-M1,2026,9,111,protected,2,2143.56,0,412.44,2556,bill photo
+H002,H002-M2,2026,9,107,protected,1,1742.06,0,338.94,2081,bill photo
+H003,H003-M1,2026,10,46,protected,2,1019.01,0,194.99,1214,bill photo
+H005,H005-M1,2026,10,189,unprotected,1,7042,569,1263,7736,online bill
+H006,H006-M1,2026,10,157,unprotected,2,6201,473,1112,6840,online bill
+H007,H007-M1,2026,10,271,unprotected,2,11098.15,0,2165.85,13264,bill photo
+H004,H004-M1,2025,9,1235,tou,9,51240.25,0,10041.76,61282.01,bill photo (1022 off-peak at 40.53 + 213 peak at 46.85)

@@ -1,0 +1,11 @@
+site_id,year,month,kwh,system_kw,source,note
+H003,2026,1,525,10,app year chart (read from bars),approx +-20
+H003,2026,2,550,10,app year chart (read from bars),approx +-20
+H003,2026,3,955,10,app year chart (read from bars),approx +-20
+H003,2026,4,1270,10,app year chart (read from bars),approx +-20
+H003,2026,5,1470,10,app year chart (read from bars),approx +-20
+H003,2026,6,1370,10,app year chart (read from bars),approx +-20
+H003,2026,7,1020,10,app year chart (read from bars),approx +-20
+H003,2026,8,1095,10,app year chart (read from bars),approx +-20
+H003,2026,9,1075,10,app year chart (read from bars),approx +-20
+H003,2026,10,890,10,app year chart (read from bars),approx +-20

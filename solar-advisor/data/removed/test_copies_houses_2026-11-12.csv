@@ -1,0 +1,3 @@
+site_id,building_id,house_size_marla,people,ac_noninverter,ac_inverter,ac_ton,fans_total,fans_inverter,fridge_total,fridge_inverter,washing_auto,washing_manual,iron,motor,geyser_electric,water_dispenser,electric_stove,stove_hood,led_tv,meters_total,meters_with_bills,has_solar,roof_type,solar_kw,solar_panels,solar_installed,notes,ac_total,oven,pressure_pump,waste_water_pump,led_7w,led_3w,fanoos,ups,air_cooler,washing_machine_any
+U001,BU001,5.0,6,1,,,8,8,1,,,,1,1,,,,,1,1,1,0,,,,,"added from app with consent, submission 6af013d18ef7c43d5ee050e7",1,,,,,,,1,,
+U002,BU002,5.0,5,,,,,,,,,,,,,,,,,1,1,0,,,,,"added from app with consent, submission 6af2ad7ab51c20170c5b8cf6",,,,,,,,,,

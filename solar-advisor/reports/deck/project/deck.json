@@ -1,0 +1,21 @@
+{
+  "v": 4,
+  "createdOnFiles": {"v": 1, "at": "2026-11-08T12:00:00Z"},
+  "lists": "css",
+  "title": "SolarAdvisor",
+  "cover": "cover",
+  "order": ["cover", "problem", "how", "data", "billmonth", "model", "curve", "solar", "results", "calibration", "app", "limits", "thanks"],
+  "sections": {
+    "s1": {"description": "The problem and what the app does", "start": "cover"},
+    "s2": {"description": "Real data from Lahore homes", "start": "data"},
+    "s3": {"description": "The consumption model and how it grows", "start": "model"},
+    "s4": {"description": "Solar output and plans for real homes", "start": "solar"},
+    "s5": {"description": "The web app", "start": "app"},
+    "s6": {"description": "Limits and next steps", "start": "limits"}
+  },
+  "faces": {
+    "space-grotesk": {"family": "Space Grotesk", "href": "https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&family=Inter:wght@400;600&display=swap"},
+    "inter": {"family": "Inter", "href": "https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&family=Inter:wght@400;600&display=swap"}
+  },
+  "designSystems": []
+}

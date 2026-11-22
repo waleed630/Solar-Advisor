@@ -1,0 +1,181 @@
+{
+  "country": "PK",
+  "currency": "PKR",
+  "last_updated": "2026-11-08",
+  "note": "Default values. The web app copies these into MongoDB on first start; after that, prices are edited from the app's Prices screen.",
+  "tariff_residential": {
+    "source": "NEPRA decision 12 Jan 2026 (A-1 residential), as quoted by bill.com.pk, lesco-online.com.pk, ebillpakistan.com. Not checked against the official NEPRA PDF.",
+    "protected_limit_units": 200,
+    "protected_slabs": [
+      {
+        "up_to": 100,
+        "rate": 10.54
+      },
+      {
+        "up_to": 200,
+        "rate": 13.01
+      }
+    ],
+    "unprotected_slabs": [
+      {
+        "up_to": 100,
+        "rate": 22.44
+      },
+      {
+        "up_to": 200,
+        "rate": 28.91
+      },
+      {
+        "up_to": 300,
+        "rate": 33.1
+      },
+      {
+        "up_to": 400,
+        "rate": 36.46
+      },
+      {
+        "up_to": 500,
+        "rate": 38.95
+      },
+      {
+        "up_to": 600,
+        "rate": 40.22
+      },
+      {
+        "up_to": 700,
+        "rate": 41.85
+      },
+      {
+        "up_to": null,
+        "rate": 47.2
+      }
+    ],
+    "unprotected_rule": "all units charged at the rate of the slab the month falls in",
+    "fc_surcharge_per_unit": {
+      "protected": 0.43,
+      "unprotected": 3.23
+    },
+    "electricity_duty_percent": 1.5,
+    "gst_percent": 18,
+    "calibration": {
+      "source": "unprotected_multiplier: median of 36 real monthly bills (data/bill_history_amounts.csv); protected and tax: 7 bills with full breakdown (data/bill_charges.csv)",
+      "unprotected_multiplier": 1.1,
+      "protected_extra_per_month": 690,
+      "tou_multiplier": 1.0,
+      "tou_fixed_per_month": 1000,
+      "tax_percent": 19.4
+    },
+    "tou": {
+      "source": "H004 bill Sep 2025 (A-1b(03)T)",
+      "applies_from_load_kw": 5,
+      "offpeak_rate": 40.53,
+      "peak_rate": 46.85,
+      "peak_share": 0.17
+    }
+  },
+  "net_billing": {
+    "source": "Profit by Pakistan Today, 10 Feb 2026: NEPRA (Prosumer) Regulations 2026, buyback Rs 11 per unit for new consumers. Other sites quote Rs 8.13 to 13.",
+    "buyback_rate_per_unit": 11.0,
+    "old_net_metering_contracts": "Agreements signed before 9 Feb 2026 keep old terms until expiry"
+  },
+  "prices": {
+    "panel_per_watt": {
+      "value": 41,
+      "source": "pakistansolarprices.com (4 Nov 2026: Longi Hi-MO 7 580W Rs 42/W, Jinko Rs 37 to 43/W), zell.pk (Oct 2026: Rs 39 to 43.5/W)",
+      "confidence": "medium"
+    },
+    "panel_watt": {
+      "value": 585,
+      "source": "common size in the same listings",
+      "confidence": "medium"
+    },
+    "inverter_hybrid_per_kw": {
+      "value": 39000,
+      "source": "6 kW about Rs 215k to 245k, 10 kW about Rs 395k to 425k (cncelectric.pk, solarhubofficial.com, mid 2026)",
+      "confidence": "medium"
+    },
+    "inverter_ongrid_per_kw": {
+      "value": 30000,
+      "source": "ESTIMATE, no reliable source found",
+      "confidence": "low"
+    },
+    "battery_lithium_per_kwh": {
+      "value": 70000,
+      "source": "ESTIMATE, no per-kWh source found",
+      "confidence": "low"
+    },
+    "structure_normal_per_kw": {
+      "value": 8000,
+      "source": "GI/aluminium frame Rs 28k to 40k for 5 kW, Rs 55k for 6 kW (solarpricepakistan.com.pk, enontraders.com)",
+      "confidence": "medium"
+    },
+    "structure_elevated_per_kw": {
+      "value": 15000,
+      "source": "ESTIMATE, no source for elevated frames",
+      "confidence": "low"
+    },
+    "installation_per_kw": {
+      "value": 5000,
+      "source": "labour Rs 4,000 to 6,000 per kW (solarpricepakistan.com.pk)",
+      "confidence": "medium"
+    },
+    "wiring_protection_per_kw": {
+      "value": 8000,
+      "source": "ESTIMATE (cables, breakers, earthing)",
+      "confidence": "low"
+    },
+    "min_inverter_kw": {
+      "value": 3,
+      "source": "smallest common grid-tied/hybrid inverter size in the price lists",
+      "confidence": "medium"
+    },
+    "fixed_costs": {
+      "value": 50000,
+      "source": "ESTIMATE: net billing application, bidirectional meter, transport, small parts",
+      "confidence": "low"
+    }
+  },
+  "solar": {
+    "yield_per_kw_month": {
+      "1": 52,
+      "2": 55,
+      "3": 96,
+      "4": 127,
+      "5": 147,
+      "6": 137,
+      "7": 102,
+      "8": 110,
+      "9": 108,
+      "10": 89,
+      "11": 70,
+      "12": 55
+    },
+    "yield_source": "Jan to Oct 2026 measured on H003 (10 kW, Lahore). Nov and Dec are ESTIMATES until measured.",
+    "roof_sqft_per_kw": 80,
+    "panel_degradation_percent_per_year": 0.5,
+    "system_life_years": 25,
+    "inverter_life_years": 12,
+    "battery_life_years": 10,
+    "life_source": "ESTIMATE: typical inverter warranty/life 10 to 15 years, lithium battery 8 to 12 years"
+  },
+  "seasons": {
+    "summer": [
+      4,
+      5,
+      6,
+      7,
+      8,
+      9
+    ],
+    "winter": [
+      11,
+      12,
+      1,
+      2
+    ],
+    "mild": [
+      3,
+      10
+    ]
+  }
+}

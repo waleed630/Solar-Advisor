@@ -1,0 +1,847 @@
+<!DOCTYPE html>
+
+<html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_standard" name="shell-type"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Plus+Jakarta+Sans:wght@600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = {
+    darkMode: "class",
+    theme: {
+      extend: {
+        "colors": {
+          "surface": "#f8f9ff",
+          "surface-container-high": "#dce9ff",
+          "error": "#ba1a1a",
+          "on-background": "#0b1c30",
+          "surface-bright": "#f8f9ff",
+          "on-secondary-container": "#00714e",
+          "outline-variant": "#c6c6cd",
+          "surface-container-lowest": "#ffffff",
+          "on-error": "#ffffff",
+          "inverse-primary": "#bec6e0",
+          "on-primary-fixed": "#131b2e",
+          "on-secondary-fixed": "#002114",
+          "primary-fixed-dim": "#bec6e0",
+          "on-primary": "#ffffff",
+          "primary-container": "#131b2e",
+          "inverse-surface": "#213145",
+          "surface-container": "#e5eeff",
+          "tertiary": "#000000",
+          "on-primary-fixed-variant": "#3f465c",
+          "on-error-container": "#93000a",
+          "on-surface-variant": "#45464d",
+          "secondary-fixed": "#85f8c4",
+          "primary-fixed": "#dae2fd",
+          "tertiary-container": "#2f1500",
+          "surface-dim": "#cbdbf5",
+          "surface-container-low": "#eff4ff",
+          "surface-tint": "#565e74",
+          "on-secondary": "#ffffff",
+          "on-tertiary-fixed-variant": "#6e3900",
+          "on-primary-container": "#7c839b",
+          "error-container": "#ffdad6",
+          "on-secondary-fixed-variant": "#005137",
+          "surface-variant": "#d3e4fe",
+          "on-tertiary": "#ffffff",
+          "tertiary-fixed-dim": "#ffb77d",
+          "surface-container-highest": "#d3e4fe",
+          "tertiary-fixed": "#ffdcc3",
+          "background": "#f8f9ff",
+          "on-surface": "#0b1c30",
+          "primary": "#000000",
+          "secondary-container": "#82f5c1",
+          "secondary-fixed-dim": "#68dba9",
+          "on-tertiary-container": "#c76c00",
+          "secondary": "#006c4a",
+          "outline": "#76777d",
+          "inverse-on-surface": "#eaf1ff",
+          "on-tertiary-fixed": "#2f1500"
+        },
+        "borderRadius": {
+          "DEFAULT": "0.25rem",
+          "lg": "0.5rem",
+          "xl": "0.75rem",
+          "full": "9999px"
+        },
+        "spacing": {
+          "margin-mobile": "1rem",
+          "space-md": "1rem",
+          "space-sm": "0.5rem",
+          "gutter": "1.5rem",
+          "margin": "2rem",
+          "space-lg": "1.5rem",
+          "space-xl": "2.5rem",
+          "space-xs": "0.25rem",
+          "gutter-mobile": "1rem"
+        },
+        "fontFamily": {
+          "body-md": [
+            "Inter"
+          ],
+          "numeric-xl": [
+            "Plus Jakarta Sans"
+          ],
+          "display-lg": [
+            "Plus Jakarta Sans"
+          ],
+          "headline-lg": [
+            "Plus Jakarta Sans"
+          ],
+          "headline-md": [
+            "Plus Jakarta Sans"
+          ],
+          "numeric-lg": [
+            "Plus Jakarta Sans"
+          ],
+          "body-sm": [
+            "Inter"
+          ],
+          "display-lg-mobile": [
+            "Plus Jakarta Sans"
+          ],
+          "label-md": [
+            "Inter"
+          ],
+          "label-sm": [
+            "Inter"
+          ],
+          "headline-sm": [
+            "Plus Jakarta Sans"
+          ],
+          "body-lg": [
+            "Inter"
+          ]
+        },
+        "fontSize": {
+          "body-md": [
+            "14px",
+            {
+              "lineHeight": "20px",
+              "fontWeight": "400"
+            }
+          ],
+          "numeric-xl": [
+            "32px",
+            {
+              "lineHeight": "38px",
+              "letterSpacing": "-0.02em",
+              "fontWeight": "700"
+            }
+          ],
+          "display-lg": [
+            "40px",
+            {
+              "lineHeight": "48px",
+              "letterSpacing": "-0.02em",
+              "fontWeight": "700"
+            }
+          ],
+          "headline-lg": [
+            "28px",
+            {
+              "lineHeight": "36px",
+              "letterSpacing": "-0.015em",
+              "fontWeight": "600"
+            }
+          ],
+          "headline-md": [
+            "22px",
+            {
+              "lineHeight": "30px",
+              "letterSpacing": "-0.01em",
+              "fontWeight": "600"
+            }
+          ],
+          "numeric-lg": [
+            "24px",
+            {
+              "lineHeight": "30px",
+              "fontWeight": "700"
+            }
+          ],
+          "body-sm": [
+            "12px",
+            {
+              "lineHeight": "18px",
+              "fontWeight": "400"
+            }
+          ],
+          "display-lg-mobile": [
+            "30px",
+            {
+              "lineHeight": "38px",
+              "letterSpacing": "-0.015em",
+              "fontWeight": "700"
+            }
+          ],
+          "label-md": [
+            "13px",
+            {
+              "lineHeight": "18px",
+              "letterSpacing": "0.01em",
+              "fontWeight": "600"
+            }
+          ],
+          "label-sm": [
+            "11px",
+            {
+              "lineHeight": "16px",
+              "letterSpacing": "0.04em",
+              "fontWeight": "600"
+            }
+          ],
+          "headline-sm": [
+            "18px",
+            {
+              "lineHeight": "26px",
+              "fontWeight": "600"
+            }
+          ],
+          "body-lg": [
+            "16px",
+            {
+              "lineHeight": "24px",
+              "fontWeight": "400"
+            }
+          ]
+        }
+      },
+    },
+  }</script></head><body class="bg-surface font-body-md text-on-surface"><header class="fixed top-0 w-full z-50 bg-surface/80 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="h-20 w-full px-margin flex items-center justify-between"><div class="flex items-center gap-space-md"><img alt="SolarAdvisor Logo" class="h-8 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/ALJJyrDOongyYQN0k22uyitZueCizCuTMfKA517WDkwBCDEUBfyFAxFidGAWkzNA9asF4BXnfgMtWmtnwFbBOajnU1LiXkBtGGOrDQk1o025mD3YpjkPQOuNOQmrP5FM_sk1vE7XtSyDf0A2mg8DM12TrWs1OHLx2YFwygRIKiWE_KQuz9UsvsnP47Hwn6FnKo-G4ZUZ3X5T1p2XJjWcGggJXNIuo0UkymJl5GN4rXaxtZnL"/><div class="flex items-center gap-space-xs"><span class="font-headline-sm text-headline-sm text-on-surface tracking-tight font-semibold">SolarAdvisor</span><span class="bg-surface-container-high text-on-surface px-space-xs py-0.5 rounded-full font-label-sm text-label-sm border border-outline-variant/30">Lahore / LESCO Beta</span></div><nav class="hidden lg:flex items-center gap-space-sm ml-space-lg" data-active-classes="bg-surface-container text-on-surface font-semibold rounded-lg"><a aria-current="page" class="px-space-md py-space-xs transition-colors bg-surface-container text-on-surface font-semibold rounded-lg" data-path="get-my-plan" href="#">Get My Plan</a><a class="px-space-md py-space-xs rounded-lg font-label-md text-label-md text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-colors" data-path="ml-model-&amp;-accuracy" href="#">ML Model &amp; Accuracy</a><a class="px-space-md py-space-xs rounded-lg font-label-md text-label-md text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-colors" data-path="tariff-&amp;-prices" href="#">Tariff &amp; Prices</a></nav></div><div class="flex items-center gap-space-md"><div class="hidden sm:flex items-center gap-space-xs px-space-md py-space-xs rounded-full bg-secondary-container/40 text-on-secondary-container font-label-sm text-label-sm border border-secondary-container"><span class="w-1.5 h-1.5 rounded-full bg-secondary"></span><span>100% Neutral &amp; Independent</span></div><a class="inline-flex items-center justify-center px-space-lg py-space-sm rounded-lg bg-tertiary text-on-tertiary font-label-md text-label-md hover:bg-on-background transition-colors shadow-sm" data-path="start-solar-feasibility" href="#">Start Solar Feasibility</a><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div></div></div></header><main class="w-full pt-20 bg-surface"><div class="flex flex-col w-full">
+<!-- Top Progress Indicator Step Tracker -->
+<div class="w-full bg-surface-container-low py-space-sm px-margin">
+<div class="max-w-7xl mx-auto flex items-center justify-between">
+<div class="flex items-center gap-space-md">
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-on-surface-variant">Assessment Progress</span>
+<div class="flex items-center gap-space-xs">
+<span class="inline-flex items-center justify-center w-5 h-5 rounded-full bg-surface-container text-on-surface-variant font-label-sm text-label-sm">1</span>
+<span class="w-4 h-0.5 bg-surface-container-high rounded-full"></span>
+<span class="inline-flex items-center justify-center w-5 h-5 rounded-full bg-surface-container text-on-surface-variant font-label-sm text-label-sm">2</span>
+<span class="w-4 h-0.5 bg-surface-container-high rounded-full"></span>
+<span class="inline-flex items-center justify-center w-5 h-5 rounded-full bg-surface-container text-on-surface-variant font-label-sm text-label-sm">3</span>
+<span class="w-4 h-0.5 bg-secondary text-on-secondary rounded-full"></span>
+<span class="inline-flex items-center justify-center px-space-xs py-0.5 rounded-full bg-secondary-container text-on-secondary-container font-label-sm text-label-sm font-semibold">Step 4: Feasibility Final</span>
+</div>
+</div>
+<div class="hidden sm:flex items-center gap-space-xs text-on-surface-variant font-label-sm text-label-sm">
+<span class="material-symbols-outlined text-[16px] text-secondary">verified</span>
+<span>Audited Against NEPRA Net-Metering Regs 2015/24</span>
+</div>
+</div>
+</div>
+<!-- Main Report Canvas -->
+<div class="w-full px-margin py-space-xl">
+<div class="max-w-7xl mx-auto flex flex-col gap-space-xl">
+<!-- Executive Header Section -->
+<section class="flex flex-col lg:flex-row lg:items-end justify-between gap-space-lg bg-surface-container-lowest p-space-xl rounded-xl shadow-sm relative overflow-hidden">
+<div class="absolute -right-16 -top-16 w-80 h-80 bg-surface-container-high/40 rounded-full blur-3xl pointer-events-none"></div>
+<div class="flex flex-col gap-space-sm max-w-3xl relative z-10">
+<div class="flex flex-wrap items-center gap-space-xs">
+<span class="px-space-sm py-0.5 rounded-full bg-surface-container-high text-on-surface font-label-sm text-label-sm">Report #LA-2024-8841</span>
+<span class="px-space-sm py-0.5 rounded-full bg-surface-container text-on-surface-variant font-label-sm text-label-sm">Generated Oct 2024</span>
+<span class="inline-flex items-center gap-1 px-space-sm py-0.5 rounded-full bg-secondary-container/50 text-on-secondary-container font-label-sm text-label-sm font-semibold">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary"></span>LESCO 3-Phase Approved Sizing
+            </span>
+</div>
+<h1 class="font-display-lg text-display-lg text-on-surface font-bold tracking-tight">Official Solar Feasibility &amp; Payback Report</h1>
+<div class="flex flex-wrap items-center gap-space-xs pt-space-xs">
+<div class="inline-flex items-center gap-space-xs px-space-md py-space-xs rounded-lg bg-surface-container text-on-surface font-label-md text-label-md">
+<span class="material-symbols-outlined text-[16px] text-on-surface-variant">home</span>
+<span>Target: <strong>10 Marla Home</strong></span>
+<span class="text-outline-variant">•</span>
+<span>Lahore (LESCO Unprotected Slab)</span>
+<span class="text-outline-variant">•</span>
+<span class="font-semibold">7,840 Annual kWh</span>
+</div>
+</div>
+<div class="flex items-center gap-space-xs p-space-sm rounded-lg bg-surface-container-low text-on-surface-variant font-body-sm text-body-sm mt-space-xs">
+<span class="material-symbols-outlined text-[18px] text-tertiary-container shrink-0">psychology</span>
+<span><strong class="font-semibold text-on-surface">Model-Assisted:</strong> Missing 3 winter months filled via temperature regression (20°C baseline model against LESCO billing patterns).</span>
+</div>
+</div>
+<!-- Quick Actions -->
+<div class="flex flex-wrap sm:flex-nowrap items-center gap-space-sm shrink-0 relative z-10">
+<button class="inline-flex items-center justify-center gap-space-xs px-space-lg py-space-sm rounded-lg bg-tertiary text-on-tertiary font-label-md text-label-md hover:bg-on-background transition-all shadow-sm" id="downloadPdfBtn">
+<span class="material-symbols-outlined text-[18px]">download</span>
+<span>Download PDF Report</span>
+</button>
+<a class="inline-flex items-center justify-center gap-space-xs px-space-lg py-space-sm rounded-lg bg-secondary text-on-secondary font-label-md text-label-md hover:bg-on-secondary-container transition-all shadow-sm" href="https://api.whatsapp.com/send?text=Check%20out%20my%20Lahore%2010.2%20kW%20Solar%20Report%20on%20SolarAdvisor" rel="noopener noreferrer" target="_blank">
+<span class="material-symbols-outlined text-[18px]">share</span>
+<span>Share on WhatsApp</span>
+</a>
+</div>
+</section>
+<!-- Executive Metric Cards (5 High-Impact Stat Tiles) -->
+<section class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-space-md">
+<!-- Tile 1 -->
+<div class="flex flex-col justify-between p-space-lg rounded-xl bg-surface-container-lowest shadow-sm hover:shadow-md transition-shadow relative overflow-hidden group">
+<div class="flex items-center justify-between gap-space-xs">
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-on-surface-variant font-semibold">Recommended</span>
+<span class="material-symbols-outlined text-secondary text-[20px]">solar_power</span>
+</div>
+<div class="my-space-md">
+<div class="font-numeric-xl text-numeric-xl text-on-surface font-bold tracking-tight">10.2 <span class="font-headline-sm text-headline-sm font-semibold text-on-surface-variant">kW</span></div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1">18 Monocrystalline Tier-1 Panels @ 575W N-Type TopCon</p>
+</div>
+<div class="pt-space-xs flex items-center gap-1 font-label-sm text-label-sm text-secondary font-semibold">
+<span>99.2% Net Zero Offset</span>
+</div>
+</div>
+<!-- Tile 2 -->
+<div class="flex flex-col justify-between p-space-lg rounded-xl bg-surface-container-lowest shadow-sm hover:shadow-md transition-shadow relative overflow-hidden group">
+<div class="flex items-center justify-between gap-space-xs">
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-on-surface-variant font-semibold">Turnkey CapEx</span>
+<span class="material-symbols-outlined text-on-surface-variant text-[20px]">payments</span>
+</div>
+<div class="my-space-md">
+<div class="font-numeric-xl text-numeric-xl text-on-surface font-bold tracking-tight">PKR 1.42<span class="font-headline-sm text-headline-sm font-semibold text-on-surface-variant">M</span></div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1">Net turnkey installed (LESCO green meter + tier-1 inverter)</p>
+</div>
+<div class="pt-space-xs flex items-center gap-1 font-label-sm text-label-sm text-on-surface-variant">
+<span>PKR 139 / Watt benchmark</span>
+</div>
+</div>
+<!-- Tile 3 -->
+<div class="flex flex-col justify-between p-space-lg rounded-xl bg-surface-container-lowest shadow-sm hover:shadow-md transition-shadow relative overflow-hidden group">
+<div class="flex items-center justify-between gap-space-xs">
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-on-surface-variant font-semibold">Average Savings</span>
+<span class="material-symbols-outlined text-secondary text-[20px]">trending_down</span>
+</div>
+<div class="my-space-md">
+<div class="font-numeric-xl text-numeric-xl text-secondary font-bold tracking-tight">54.8k <span class="font-headline-sm text-headline-sm font-semibold text-secondary">/ mo</span></div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1">Summer peak savings reach up to PKR 88,000 / month</p>
+</div>
+<div class="pt-space-xs flex items-center gap-1 font-label-sm text-label-sm text-secondary font-semibold">
+<span>Peak slab unit rate avoided</span>
+</div>
+</div>
+<!-- Tile 4 -->
+<div class="flex flex-col justify-between p-space-lg rounded-xl bg-surface-container-lowest shadow-sm hover:shadow-md transition-shadow relative overflow-hidden group">
+<div class="flex items-center justify-between gap-space-xs">
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-on-surface-variant font-semibold">Simple Payback</span>
+<span class="material-symbols-outlined text-on-tertiary-container text-[20px]">bolt</span>
+</div>
+<div class="my-space-md">
+<div class="font-numeric-xl text-numeric-xl text-on-surface font-bold tracking-tight">2.1 <span class="font-headline-sm text-headline-sm font-semibold text-on-surface-variant">Years</span></div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1">ROI: 46.8% per annum (exceeds bank term deposit rates)</p>
+</div>
+<div class="pt-space-xs flex items-center gap-1 font-label-sm text-label-sm text-on-tertiary-container font-semibold">
+<span>Breakeven in Q1 2027</span>
+</div>
+</div>
+<!-- Tile 5 -->
+<div class="flex flex-col justify-between p-space-lg rounded-xl bg-surface-container-high/60 shadow-sm hover:shadow-md transition-shadow relative overflow-hidden group">
+<div class="flex items-center justify-between gap-space-xs">
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-on-surface font-semibold">25-Yr Net Gain</span>
+<span class="material-symbols-outlined text-primary text-[20px]">account_balance</span>
+</div>
+<div class="my-space-md">
+<div class="font-numeric-xl text-numeric-xl text-on-surface font-bold tracking-tight">PKR 14.8<span class="font-headline-sm text-headline-sm font-semibold text-on-surface-variant">M</span></div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1">Factoring inverter replacement @ yr 10 &amp; 20 + 0.5% degradation</p>
+</div>
+<div class="pt-space-xs flex items-center gap-1 font-label-sm text-label-sm text-secondary font-semibold">
+<span>10.4x CapEx Multiplier</span>
+</div>
+</div>
+</section>
+<!-- Interactive Data Visualizations Bento -->
+<section class="grid grid-cols-1 lg:grid-cols-12 gap-space-lg">
+<!-- Chart 1: 12-Month Generation vs Consumption -->
+<div class="lg:col-span-7 flex flex-col p-space-xl rounded-xl bg-surface-container-lowest shadow-sm justify-between">
+<div>
+<div class="flex flex-col sm:flex-row sm:items-center justify-between gap-space-sm mb-space-lg">
+<div>
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-on-surface-variant font-semibold">Production &amp; Load Modeling</span>
+<h2 class="font-headline-md text-headline-md text-on-surface font-semibold">12-Month Generation vs. Consumption</h2>
+</div>
+<!-- Legend -->
+<div class="flex flex-wrap items-center gap-space-md font-label-sm text-label-sm">
+<div class="flex items-center gap-1">
+<span class="w-3 h-3 rounded bg-secondary"></span>
+<span class="text-on-surface-variant">Actual Bill</span>
+</div>
+<div class="flex items-center gap-1">
+<span class="w-3 h-3 rounded bg-secondary-container"></span>
+<span class="text-on-surface-variant">ML Imputed</span>
+</div>
+<div class="flex items-center gap-1">
+<span class="w-3 h-3 rounded bg-tertiary-fixed-dim"></span>
+<span class="text-on-surface">Solar Yield</span>
+</div>
+</div>
+</div>
+<!-- SVG Bar / Area Composite Chart -->
+<div class="w-full h-64 relative flex items-end justify-between pt-6 pb-2 px-1">
+<!-- Y-Axis Reference Guidelines -->
+<div class="absolute inset-0 flex flex-col justify-between pointer-events-none opacity-20">
+<div class="w-full h-px bg-outline"></div>
+<div class="w-full h-px bg-outline"></div>
+<div class="w-full h-px bg-outline"></div>
+<div class="w-full h-px bg-outline"></div>
+</div>
+<!-- Month 1: Jan (Imputed) -->
+<div class="flex flex-col items-center flex-1 group relative h-full justify-end">
+<div class="flex items-end gap-1 h-full w-full justify-center px-1">
+<div class="w-2.5 sm:w-3.5 bg-secondary-container rounded-t" style="height: 38%;"></div>
+<div class="w-2.5 sm:w-3.5 bg-tertiary-fixed-dim rounded-t" style="height: 52%;"></div>
+</div>
+<span class="font-body-sm text-body-sm text-on-surface-variant mt-2 text-[10px] sm:text-body-sm">Jan</span>
+<div class="hidden group-hover:block absolute bottom-full mb-2 bg-inverse-surface text-inverse-on-surface p-1.5 rounded text-[11px] whitespace-nowrap z-20 pointer-events-none">
+                  Model Load: 310 kWh | Solar: 420 kWh
+                </div>
+</div>
+<!-- Month 2: Feb (Imputed) -->
+<div class="flex flex-col items-center flex-1 group relative h-full justify-end">
+<div class="flex items-end gap-1 h-full w-full justify-center px-1">
+<div class="w-2.5 sm:w-3.5 bg-secondary-container rounded-t" style="height: 42%;"></div>
+<div class="w-2.5 sm:w-3.5 bg-tertiary-fixed-dim rounded-t" style="height: 64%;"></div>
+</div>
+<span class="font-body-sm text-body-sm text-on-surface-variant mt-2 text-[10px] sm:text-body-sm">Feb</span>
+<div class="hidden group-hover:block absolute bottom-full mb-2 bg-inverse-surface text-inverse-on-surface p-1.5 rounded text-[11px] whitespace-nowrap z-20 pointer-events-none">
+                  Model Load: 340 kWh | Solar: 530 kWh
+                </div>
+</div>
+<!-- Month 3: Mar (Actual) -->
+<div class="flex flex-col items-center flex-1 group relative h-full justify-end">
+<div class="flex items-end gap-1 h-full w-full justify-center px-1">
+<div class="w-2.5 sm:w-3.5 bg-secondary rounded-t" style="height: 55%;"></div>
+<div class="w-2.5 sm:w-3.5 bg-tertiary-fixed-dim rounded-t" style="height: 78%;"></div>
+</div>
+<span class="font-body-sm text-body-sm text-on-surface-variant mt-2 text-[10px] sm:text-body-sm">Mar</span>
+<div class="hidden group-hover:block absolute bottom-full mb-2 bg-inverse-surface text-inverse-on-surface p-1.5 rounded text-[11px] whitespace-nowrap z-20 pointer-events-none">
+                  Actual: 460 kWh | Solar: 690 kWh
+                </div>
+</div>
+<!-- Month 4: Apr (Actual) -->
+<div class="flex flex-col items-center flex-1 group relative h-full justify-end">
+<div class="flex items-end gap-1 h-full w-full justify-center px-1">
+<div class="w-2.5 sm:w-3.5 bg-secondary rounded-t" style="height: 72%;"></div>
+<div class="w-2.5 sm:w-3.5 bg-tertiary-fixed-dim rounded-t" style="height: 88%;"></div>
+</div>
+<span class="font-body-sm text-body-sm text-on-surface-variant mt-2 text-[10px] sm:text-body-sm">Apr</span>
+<div class="hidden group-hover:block absolute bottom-full mb-2 bg-inverse-surface text-inverse-on-surface p-1.5 rounded text-[11px] whitespace-nowrap z-20 pointer-events-none">
+                  Actual: 620 kWh | Solar: 810 kWh
+                </div>
+</div>
+<!-- Month 5: May (Actual) -->
+<div class="flex flex-col items-center flex-1 group relative h-full justify-end">
+<div class="flex items-end gap-1 h-full w-full justify-center px-1">
+<div class="w-2.5 sm:w-3.5 bg-secondary rounded-t" style="height: 88%;"></div>
+<div class="w-2.5 sm:w-3.5 bg-tertiary-fixed-dim rounded-t" style="height: 96%;"></div>
+</div>
+<span class="font-body-sm text-body-sm text-on-surface-variant mt-2 text-[10px] sm:text-body-sm">May</span>
+<div class="hidden group-hover:block absolute bottom-full mb-2 bg-inverse-surface text-inverse-on-surface p-1.5 rounded text-[11px] whitespace-nowrap z-20 pointer-events-none">
+                  Actual: 820 kWh | Solar: 940 kWh
+                </div>
+</div>
+<!-- Month 6: Jun (Actual) -->
+<div class="flex flex-col items-center flex-1 group relative h-full justify-end">
+<div class="flex items-end gap-1 h-full w-full justify-center px-1">
+<div class="w-2.5 sm:w-3.5 bg-secondary rounded-t" style="height: 98%;"></div>
+<div class="w-2.5 sm:w-3.5 bg-tertiary-fixed-dim rounded-t" style="height: 94%;"></div>
+</div>
+<span class="font-body-sm text-body-sm text-on-surface-variant mt-2 text-[10px] sm:text-body-sm">Jun</span>
+<div class="hidden group-hover:block absolute bottom-full mb-2 bg-inverse-surface text-inverse-on-surface p-1.5 rounded text-[11px] whitespace-nowrap z-20 pointer-events-none">
+                  Actual: 950 kWh | Solar: 910 kWh
+                </div>
+</div>
+<!-- Month 7: Jul (Actual) -->
+<div class="flex flex-col items-center flex-1 group relative h-full justify-end">
+<div class="flex items-end gap-1 h-full w-full justify-center px-1">
+<div class="w-2.5 sm:w-3.5 bg-secondary rounded-t" style="height: 94%;"></div>
+<div class="w-2.5 sm:w-3.5 bg-tertiary-fixed-dim rounded-t" style="height: 85%;"></div>
+</div>
+<span class="font-body-sm text-body-sm text-on-surface-variant mt-2 text-[10px] sm:text-body-sm">Jul</span>
+<div class="hidden group-hover:block absolute bottom-full mb-2 bg-inverse-surface text-inverse-on-surface p-1.5 rounded text-[11px] whitespace-nowrap z-20 pointer-events-none">
+                  Actual: 910 kWh | Solar: 820 kWh
+                </div>
+</div>
+<!-- Month 8: Aug (Actual) -->
+<div class="flex flex-col items-center flex-1 group relative h-full justify-end">
+<div class="flex items-end gap-1 h-full w-full justify-center px-1">
+<div class="w-2.5 sm:w-3.5 bg-secondary rounded-t" style="height: 91%;"></div>
+<div class="w-2.5 sm:w-3.5 bg-tertiary-fixed-dim rounded-t" style="height: 84%;"></div>
+</div>
+<span class="font-body-sm text-body-sm text-on-surface-variant mt-2 text-[10px] sm:text-body-sm">Aug</span>
+<div class="hidden group-hover:block absolute bottom-full mb-2 bg-inverse-surface text-inverse-on-surface p-1.5 rounded text-[11px] whitespace-nowrap z-20 pointer-events-none">
+                  Actual: 880 kWh | Solar: 810 kWh
+                </div>
+</div>
+<!-- Month 9: Sep (Actual) -->
+<div class="flex flex-col items-center flex-1 group relative h-full justify-end">
+<div class="flex items-end gap-1 h-full w-full justify-center px-1">
+<div class="w-2.5 sm:w-3.5 bg-secondary rounded-t" style="height: 74%;"></div>
+<div class="w-2.5 sm:w-3.5 bg-tertiary-fixed-dim rounded-t" style="height: 80%;"></div>
+</div>
+<span class="font-body-sm text-body-sm text-on-surface-variant mt-2 text-[10px] sm:text-body-sm">Sep</span>
+<div class="hidden group-hover:block absolute bottom-full mb-2 bg-inverse-surface text-inverse-on-surface p-1.5 rounded text-[11px] whitespace-nowrap z-20 pointer-events-none">
+                  Actual: 710 kWh | Solar: 780 kWh
+                </div>
+</div>
+<!-- Month 10: Oct (Actual) -->
+<div class="flex flex-col items-center flex-1 group relative h-full justify-end">
+<div class="flex items-end gap-1 h-full w-full justify-center px-1">
+<div class="w-2.5 sm:w-3.5 bg-secondary rounded-t" style="height: 51%;"></div>
+<div class="w-2.5 sm:w-3.5 bg-tertiary-fixed-dim rounded-t" style="height: 70%;"></div>
+</div>
+<span class="font-body-sm text-body-sm text-on-surface-variant mt-2 text-[10px] sm:text-body-sm">Oct</span>
+<div class="hidden group-hover:block absolute bottom-full mb-2 bg-inverse-surface text-inverse-on-surface p-1.5 rounded text-[11px] whitespace-nowrap z-20 pointer-events-none">
+                  Actual: 490 kWh | Solar: 670 kWh
+                </div>
+</div>
+<!-- Month 11: Nov (Actual) -->
+<div class="flex flex-col items-center flex-1 group relative h-full justify-end">
+<div class="flex items-end gap-1 h-full w-full justify-center px-1">
+<div class="w-2.5 sm:w-3.5 bg-secondary rounded-t" style="height: 40%;"></div>
+<div class="w-2.5 sm:w-3.5 bg-tertiary-fixed-dim rounded-t" style="height: 54%;"></div>
+</div>
+<span class="font-body-sm text-body-sm text-on-surface-variant mt-2 text-[10px] sm:text-body-sm">Nov</span>
+<div class="hidden group-hover:block absolute bottom-full mb-2 bg-inverse-surface text-inverse-on-surface p-1.5 rounded text-[11px] whitespace-nowrap z-20 pointer-events-none">
+                  Actual: 380 kWh | Solar: 480 kWh
+                </div>
+</div>
+<!-- Month 12: Dec (Imputed) -->
+<div class="flex flex-col items-center flex-1 group relative h-full justify-end">
+<div class="flex items-end gap-1 h-full w-full justify-center px-1">
+<div class="w-2.5 sm:w-3.5 bg-secondary-container rounded-t" style="height: 35%;"></div>
+<div class="w-2.5 sm:w-3.5 bg-tertiary-fixed-dim rounded-t" style="height: 44%;"></div>
+</div>
+<span class="font-body-sm text-body-sm text-on-surface-variant mt-2 text-[10px] sm:text-body-sm">Dec</span>
+<div class="hidden group-hover:block absolute bottom-full mb-2 bg-inverse-surface text-inverse-on-surface p-1.5 rounded text-[11px] whitespace-nowrap z-20 pointer-events-none">
+                  Model Load: 280 kWh | Solar: 390 kWh
+                </div>
+</div>
+</div>
+</div>
+<div class="pt-space-md mt-space-md bg-surface-container-low p-space-md rounded-lg flex items-center justify-between">
+<div class="flex items-center gap-space-xs font-body-sm text-body-sm text-on-surface-variant">
+<span class="material-symbols-outlined text-[18px] text-secondary">eco</span>
+<span>Net Annual Export to LESCO: <strong class="text-on-surface font-semibold">+1,130 units</strong> (Credited at Rs 22.5/kWh off-peak)</span>
+</div>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Annual Sun Hours: 2,840h</span>
+</div>
+</div>
+<!-- Chart 2: Net Monthly Bill Impact -->
+<div class="lg:col-span-5 flex flex-col p-space-xl rounded-xl bg-surface-container-lowest shadow-sm justify-between">
+<div>
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-on-surface-variant font-semibold">Cashflow Analysis</span>
+<h2 class="font-headline-md text-headline-md text-on-surface font-semibold mb-space-md">Net Monthly Bill Impact</h2>
+<p class="font-body-sm text-body-sm text-on-surface-variant mb-space-lg">
+              Comparison between your current unmitigated LESCO invoices and your net monthly utility statement after solar export credits.
+            </p>
+<!-- Mini visual waterfall comparison -->
+<div class="space-y-space-md">
+<div>
+<div class="flex items-center justify-between font-label-md text-label-md mb-1">
+<span class="text-on-surface-variant">Typical July Summer Bill</span>
+<span class="font-semibold text-error">PKR 94,200</span>
+</div>
+<div class="w-full h-3 rounded-full bg-surface-container overflow-hidden">
+<div class="h-full bg-error rounded-full" style="width: 100%;"></div>
+</div>
+<div class="flex items-center justify-between font-label-sm text-label-sm text-on-surface-variant mt-1">
+<span>LESCO 700+ Slab + Fuel Surcharge + TV Fee</span>
+<span>950 Units</span>
+</div>
+</div>
+<div>
+<div class="flex items-center justify-between font-label-md text-label-md mb-1">
+<span class="text-on-surface font-semibold">Solar-Adjusted July Bill</span>
+<span class="font-semibold text-secondary">PKR 6,100</span>
+</div>
+<div class="w-full h-3 rounded-full bg-surface-container overflow-hidden">
+<div class="h-full bg-secondary rounded-full" style="width: 8%;"></div>
+</div>
+<div class="flex items-center justify-between font-label-sm text-label-sm text-secondary font-semibold mt-1">
+<span>93.5% Slash in peak utility burden</span>
+<span>Net: 40 kWh Grid Import</span>
+</div>
+</div>
+<div class="p-space-md rounded-lg bg-surface-container">
+<div class="flex items-center justify-between font-label-md text-label-md mb-1">
+<span class="text-on-surface font-semibold">Spring / Winter Months (Feb-Apr)</span>
+<span class="font-semibold text-secondary-container bg-on-secondary-container px-2 py-0.5 rounded text-[12px]">+PKR Credit</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1">
+                  Excess solar generation creates negative billing credits rolled over to offset summer air conditioning peaks under NEPRA Section 14 regulations.
+                </p>
+</div>
+</div>
+</div>
+<div class="mt-space-lg flex items-center justify-between pt-space-md">
+<div>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Estimated 1st Year Savings</span>
+<div class="font-headline-sm text-headline-sm font-bold text-on-surface">PKR 657,600</div>
+</div>
+<div class="text-right">
+<span class="font-label-sm text-label-sm text-on-surface-variant">LESCO Slab Protection</span>
+<div class="font-label-md text-label-md font-semibold text-secondary">Eliminates 700+ Penalties</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Detailed System Configuration Comparison Table -->
+<section class="flex flex-col p-space-xl rounded-xl bg-surface-container-lowest shadow-sm">
+<div class="flex flex-col sm:flex-row sm:items-center justify-between gap-space-sm mb-space-lg">
+<div>
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-on-surface-variant font-semibold">Architecture Assessment</span>
+<h2 class="font-headline-lg text-headline-lg text-on-surface font-semibold">System Configuration Comparison</h2>
+<p class="font-body-md text-body-md text-on-surface-variant mt-1">Carefully calibrated for the unique load-shedding and tariff environment of Lahore.</p>
+</div>
+<div class="flex items-center gap-space-xs font-label-sm text-label-sm text-on-surface-variant bg-surface-container px-space-md py-space-xs rounded-lg self-start sm:self-auto">
+<span class="material-symbols-outlined text-[16px] text-secondary">lock</span>
+<span>Quotes Valid for 7 Days</span>
+</div>
+</div>
+<!-- Comparison Matrix -->
+<div class="overflow-x-auto">
+<table class="w-full text-left">
+<thead>
+<tr class="bg-surface-container-low text-on-surface">
+<th class="py-space-md px-space-lg font-label-md text-label-md font-semibold rounded-l-lg">Specification / Metric</th>
+<th class="py-space-md px-space-lg font-label-md text-label-md font-semibold w-1/3">
+<div class="flex items-center gap-space-xs">
+<span>Grid-Tied (Without Battery)</span>
+<span class="px-2 py-0.5 rounded-full bg-secondary-container text-on-secondary-container text-[11px] font-bold">Best Financial Return</span>
+</div>
+</th>
+<th class="py-space-md px-space-lg font-label-md text-label-md font-semibold w-1/3 rounded-r-lg">
+<div class="flex items-center gap-space-xs">
+<span>Hybrid (With 10 kWh Storage)</span>
+<span class="px-2 py-0.5 rounded-full bg-surface-container-high text-on-surface text-[11px] font-bold">Best Energy Security</span>
+</div>
+</th>
+</tr>
+</thead>
+<tbody class="divide-y-0">
+<tr class="hover:bg-surface-container-low/50 transition-colors">
+<td class="py-space-md px-space-lg font-body-md text-body-md text-on-surface-variant font-medium">Recommended System Capacity</td>
+<td class="py-space-md px-space-lg font-body-md text-body-md text-on-surface font-semibold">10.2 kW DC (10 kW AC Inverter)</td>
+<td class="py-space-md px-space-lg font-body-md text-body-md text-on-surface font-semibold">10.2 kW DC (10 kW Hybrid Inverter)</td>
+</tr>
+<tr class="bg-surface-container-low/30 hover:bg-surface-container-low/50 transition-colors">
+<td class="py-space-md px-space-lg font-body-md text-body-md text-on-surface-variant font-medium">Storage Capacity (Lithium LiFePO4)</td>
+<td class="py-space-md px-space-lg font-body-md text-body-md text-on-surface-variant">None (Grid used as virtual battery)</td>
+<td class="py-space-md px-space-lg font-body-md text-body-md text-on-surface font-semibold">10 kWh (200Ah 48V Rack Battery)</td>
+</tr>
+<tr class="hover:bg-surface-container-low/50 transition-colors">
+<td class="py-space-md px-space-lg font-body-md text-body-md text-on-surface-variant font-medium">Total Turnkey CapEx (Installed)</td>
+<td class="py-space-md px-space-lg font-body-md text-body-md text-secondary font-bold text-headline-sm">PKR 1,420,000</td>
+<td class="py-space-md px-space-lg font-body-md text-body-md text-on-surface font-bold text-headline-sm">PKR 2,280,000</td>
+</tr>
+<tr class="bg-surface-container-low/30 hover:bg-surface-container-low/50 transition-colors">
+<td class="py-space-md px-space-lg font-body-md text-body-md text-on-surface-variant font-medium">Average Monthly Electricity Offset</td>
+<td class="py-space-md px-space-lg font-body-md text-body-md text-on-surface">PKR 54,800 / month</td>
+<td class="py-space-md px-space-lg font-body-md text-body-md text-on-surface">PKR 57,200 / month</td>
+</tr>
+<tr class="hover:bg-surface-container-low/50 transition-colors">
+<td class="py-space-md px-space-lg font-body-md text-body-md text-on-surface-variant font-medium">Grid Outage / Load-Shedding Resilience</td>
+<td class="py-space-md px-space-lg font-body-md text-body-md text-error flex items-center gap-1 font-medium">
+<span class="material-symbols-outlined text-[18px]">cancel</span>
+<span>Shuts down automatically (Anti-islanding)</span>
+</td>
+<td class="py-space-md px-space-lg font-body-md text-body-md text-secondary font-semibold">
+<div class="flex items-center gap-1">
+<span class="material-symbols-outlined text-[18px]">check_circle</span>
+<span>10ms Instant Transfer (Powers 2 ACs + Refrig)</span>
+</div>
+</td>
+</tr>
+<tr class="bg-surface-container-low/30 hover:bg-surface-container-low/50 transition-colors">
+<td class="py-space-md px-space-lg font-body-md text-body-md text-on-surface-variant font-medium">Simple Payback Period</td>
+<td class="py-space-md px-space-lg font-body-md text-body-md text-on-surface font-bold">2.1 Years (46.8% ROI)</td>
+<td class="py-space-md px-space-lg font-body-md text-body-md text-on-surface font-bold">3.3 Years (30.1% ROI)</td>
+</tr>
+<tr class="hover:bg-surface-container-low/50 transition-colors">
+<td class="py-space-md px-space-lg font-body-md text-body-md text-on-surface-variant font-medium">25-Year Cumulative Net Savings</td>
+<td class="py-space-md px-space-lg font-body-md text-body-md text-secondary font-bold">PKR 14.82 Million</td>
+<td class="py-space-md px-space-lg font-body-md text-body-md text-on-surface font-bold">PKR 13.95 Million (Battery replaced yr 12)</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="mt-space-lg p-space-md rounded-xl bg-surface-container flex flex-col md:flex-row items-start md:items-center justify-between gap-space-md">
+<div class="flex items-start gap-space-sm">
+<span class="material-symbols-outlined text-secondary text-[24px] shrink-0 mt-0.5">lightbulb</span>
+<div class="text-on-surface font-body-sm text-body-sm">
+<strong class="font-semibold text-on-surface">SolarAdvisor Neutral Verdict:</strong> If your DHA/Bahria feeder experiences less than 1.5 hours of daily load-shedding, choose <strong class="font-semibold">Grid-Tied</strong> for rapid capital payback. For frequent load-shedding zones (Wapda Town, Johar Town feeder lines), select the <strong class="font-semibold">Hybrid Solution</strong> to eliminate UPS maintenance.
+            </div>
+</div>
+<button class="shrink-0 px-space-md py-space-xs rounded-lg bg-surface-container-lowest font-label-md text-label-md text-on-surface hover:bg-surface-container-high transition-colors shadow-sm">
+            Explore Hybrid Battery Add-ons
+          </button>
+</div>
+</section>
+<!-- Technical & Engineering Details Bento -->
+<section class="grid grid-cols-1 lg:grid-cols-3 gap-space-lg">
+<!-- Roof Space & Physical Structural Check -->
+<div class="flex flex-col p-space-lg rounded-xl bg-surface-container-lowest shadow-sm justify-between">
+<div>
+<div class="flex items-center justify-between mb-space-md">
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-on-surface-variant font-semibold">Physical Feasibility</span>
+<span class="material-symbols-outlined text-secondary text-[20px]">roofing</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm font-semibold text-on-surface mb-space-xs">Roof Fit &amp; Layout</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant mb-space-md">
+              480 sq ft required of 920 sq ft usable roof (52% roof coverage - Optimal tilt 30° South).
+            </p>
+<div class="w-full h-40 rounded-xl overflow-hidden relative mb-space-md">
+<img class="w-full h-full object-cover" data-alt="Architectural drone view of a pristine residential flat rooftop in Lahore with neatly installed elevated solar panel racks, clear sunlight, high detail clean engineering layout" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBF61WiZlbydM57PzsKtReNWAeAdVMnKqfSGTXdh73-t_EgJbP5-qaQqfroad3WQiw3zOGac7I4XDvmXSvrfCVwHsfAowsNbsrThxvffkODgA4TPP398idviZo6AiOMNP-xOb6yysSb2cxllPYohrxUstvmKDx9fqVlpArEymD7ozGmLAUL6qUjrSJ4-M8vDJ2y1KKL27zICf33TRWPATJTgFPueihkX6Fkl4Mm34mp"/>
+<div class="absolute bottom-2 left-2 px-2 py-1 rounded bg-inverse-surface/80 text-inverse-on-surface font-label-sm text-label-sm backdrop-blur-sm">
+                Azimuth 180° True South
+              </div>
+</div>
+<div class="space-y-space-xs font-body-sm text-body-sm">
+<div class="flex justify-between text-on-surface-variant">
+<span>Mounting Type:</span>
+<span class="font-medium text-on-surface">Elevated Galvanized Iron (GI) L2/L3</span>
+</div>
+<div class="flex justify-between text-on-surface-variant">
+<span>Ground Clearance:</span>
+<span class="font-medium text-on-surface">6.5 ft (Preserves Rooftop Terrace)</span>
+</div>
+<div class="flex justify-between text-on-surface-variant">
+<span>Wind Resistance Rating:</span>
+<span class="font-medium text-on-surface">140 km/h (Lahore monsoon safe)</span>
+</div>
+</div>
+</div>
+<div class="pt-space-md mt-space-md flex items-center gap-space-xs text-secondary font-label-sm text-label-sm">
+<span class="material-symbols-outlined text-[16px]">verified</span>
+<span>Structurally verified for standard RCC slab</span>
+</div>
+</div>
+<!-- Appliance Load Breakdown -->
+<div class="flex flex-col p-space-lg rounded-xl bg-surface-container-lowest shadow-sm justify-between">
+<div>
+<div class="flex items-center justify-between mb-space-md">
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-on-surface-variant font-semibold">Load Profile</span>
+<span class="material-symbols-outlined text-on-tertiary-container text-[20px]">ac_unit</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm font-semibold text-on-surface mb-space-xs">Appliance Energy Distribution</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant mb-space-md">
+              Summertime consumption baseline driving the 10.2 kW system sizing calculation.
+            </p>
+<div class="space-y-space-md">
+<div>
+<div class="flex justify-between font-label-sm text-label-sm mb-1">
+<span class="text-on-surface font-medium">Inverter Air Conditioners (3 units)</span>
+<span class="text-on-surface font-semibold">54% (513 kWh/mo)</span>
+</div>
+<div class="w-full h-2 rounded-full bg-surface-container overflow-hidden">
+<div class="h-full bg-secondary rounded-full" style="width: 54%;"></div>
+</div>
+</div>
+<div>
+<div class="flex justify-between font-label-sm text-label-sm mb-1">
+<span class="text-on-surface font-medium">Refrigeration &amp; Deep Freezer</span>
+<span class="text-on-surface font-semibold">18% (171 kWh/mo)</span>
+</div>
+<div class="w-full h-2 rounded-full bg-surface-container overflow-hidden">
+<div class="h-full bg-secondary/70 rounded-full" style="width: 18%;"></div>
+</div>
+</div>
+<div>
+<div class="flex justify-between font-label-sm text-label-sm mb-1">
+<span class="text-on-surface font-medium">Water Pumps &amp; Motors (1 HP + 1.5 HP)</span>
+<span class="text-on-surface font-semibold">14% (133 kWh/mo)</span>
+</div>
+<div class="w-full h-2 rounded-full bg-surface-container overflow-hidden">
+<div class="h-full bg-surface-tint rounded-full" style="width: 14%;"></div>
+</div>
+</div>
+<div>
+<div class="flex justify-between font-label-sm text-label-sm mb-1">
+<span class="text-on-surface font-medium">Lighting, TV, Fans &amp; Electronics</span>
+<span class="text-on-surface font-semibold">14% (133 kWh/mo)</span>
+</div>
+<div class="w-full h-2 rounded-full bg-surface-container overflow-hidden">
+<div class="h-full bg-outline-variant rounded-full" style="width: 14%;"></div>
+</div>
+</div>
+</div>
+</div>
+<div class="pt-space-md mt-space-md p-space-sm rounded-lg bg-surface-container text-on-surface-variant font-body-sm text-body-sm">
+<span class="font-medium text-on-surface">Insight:</span> Running daytime ACs during peak generation (11:00 AM - 3:00 PM) achieves 100% self-consumption efficiency.
+          </div>
+</div>
+<!-- ML Model Confidence Scorecard -->
+<div class="flex flex-col p-space-lg rounded-xl bg-surface-container-lowest shadow-sm justify-between">
+<div>
+<div class="flex items-center justify-between mb-space-md">
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-on-surface-variant font-semibold">Model Validation</span>
+<span class="material-symbols-outlined text-secondary text-[20px]">insights</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm font-semibold text-on-surface mb-space-xs">Regression Accuracy Scorecard</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant mb-space-md">
+              Independent regression model trained on verified smart meter datasets from residential Lahore homes.
+            </p>
+<div class="grid grid-cols-2 gap-space-sm mb-space-md">
+<div class="p-space-sm rounded-lg bg-surface-container">
+<span class="font-label-sm text-label-sm text-on-surface-variant">Variance R² Score</span>
+<div class="font-headline-sm text-headline-sm font-bold text-on-surface mt-0.5">0.872</div>
+<span class="text-[10px] text-secondary font-semibold">High Predictability</span>
+</div>
+<div class="p-space-sm rounded-lg bg-surface-container">
+<span class="font-label-sm text-label-sm text-on-surface-variant">Mean Absolute Error</span>
+<div class="font-headline-sm text-headline-sm font-bold text-on-surface mt-0.5">77.5 <span class="text-[12px] font-normal text-on-surface-variant">units/mo</span></div>
+<span class="text-[10px] text-on-surface-variant">±4.1% band</span>
+</div>
+</div>
+<div class="space-y-space-xs font-body-sm text-body-sm">
+<div class="flex justify-between text-on-surface-variant">
+<span>Training Dataset:</span>
+<span class="font-medium text-on-surface">6+ Validated Lahore 10-Marla Homes</span>
+</div>
+<div class="flex justify-between text-on-surface-variant">
+<span>Weather Baseline:</span>
+<span class="font-medium text-on-surface">ERA5 Satellite Solar Irradiance</span>
+</div>
+<div class="flex justify-between text-on-surface-variant">
+<span>Tariff Schedule:</span>
+<span class="font-medium text-on-surface">LESCO Notification (July 2024 Base)</span>
+</div>
+</div>
+</div>
+<div class="pt-space-md mt-space-md flex items-center justify-between text-on-surface font-label-sm text-label-sm">
+<span>Model Confidence:</span>
+<span class="px-space-sm py-0.5 rounded-full bg-secondary-container text-on-secondary-container font-semibold">94.8% High Confidence</span>
+</div>
+</div>
+</section>
+<!-- Next Steps & Direct Installer Quote RFP Banner -->
+<section class="flex flex-col md:flex-row items-center justify-between gap-space-lg p-space-xl rounded-xl bg-inverse-surface text-inverse-on-surface shadow-md">
+<div class="flex flex-col gap-space-xs max-w-2xl">
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-secondary-fixed text-[20px]">gavel</span>
+<span class="font-label-sm text-label-sm text-secondary-fixed font-semibold uppercase tracking-wider">Independent Advisory Protocol</span>
+</div>
+<h3 class="font-headline-lg text-headline-lg font-bold">Ready to Request Competitive Bids?</h3>
+<p class="font-body-md text-body-md text-surface-variant leading-relaxed">
+            Download your standardized bill of materials (BoM) specification sheet to demand identical, apples-to-apples bids from top PEC/AEDB-certified solar EPC contractors in Lahore.
+          </p>
+</div>
+<div class="flex flex-col sm:flex-row items-center gap-space-md shrink-0 w-full sm:w-auto">
+<button class="w-full sm:w-auto inline-flex items-center justify-center gap-space-xs px-space-lg py-space-md rounded-lg bg-surface-container-lowest text-on-surface font-label-md text-label-md hover:bg-surface-container-high transition-colors font-semibold shadow-sm">
+<span class="material-symbols-outlined text-[18px]">receipt_long</span>
+<span>Download Engineering BoM</span>
+</button>
+<button class="w-full sm:w-auto inline-flex items-center justify-center gap-space-xs px-space-lg py-space-md rounded-lg bg-secondary text-on-secondary font-label-md text-label-md hover:bg-on-secondary-container transition-colors font-semibold shadow-sm">
+<span class="material-symbols-outlined text-[18px]">engineering</span>
+<span>Request 3 Verified EPC Bids</span>
+</button>
+</div>
+</section>
+</div>
+</div>
+</div>
+<script>
+  // Simple toast feedback for PDF Download button micro-interaction
+  document.getElementById('downloadPdfBtn')?.addEventListener('click', function() {
+    const originalText = this.innerHTML;
+    this.innerHTML = '<span class="material-symbols-outlined text-[18px] animate-spin">refresh</span><span>Compiling Feasibility PDF...</span>';
+    setTimeout(() => {
+      this.innerHTML = '<span class="material-symbols-outlined text-[18px]">check</span><span>Report Downloaded</span>';
+      setTimeout(() => {
+        this.innerHTML = originalText;
+      }, 3000);
+    }, 1200);
+  });
+</script></main><footer class="w-full bg-surface-container-low"><div class="w-full px-margin py-space-xl"><div class="p-space-lg rounded-xl bg-surface-container-lowest mb-space-lg"><div class="flex items-start gap-space-sm"><span class="material-symbols-outlined text-on-surface-variant text-[20px] shrink-0 mt-0.5">shield</span><p class="font-body-sm text-body-sm text-on-surface-variant leading-relaxed">Estimates based on LESCO slab tariff schedule &amp; Lahore solar irradiance. Equipment costs benchmarked weekly. Independent advisory — we do not sell panels or take installer commissions.</p></div></div><div class="flex flex-col md:flex-row items-center justify-between gap-space-md pt-space-md"><div class="flex items-center gap-space-xs font-body-sm text-body-sm text-on-surface-variant"><span>© 2024 SolarAdvisor Pakistan. All rights reserved.</span></div><div class="flex flex-wrap items-center gap-space-lg"><a class="font-label-sm text-label-sm text-on-surface-variant hover:text-on-surface transition-colors" data-path="get-my-plan" href="#">Get My Plan</a><a class="font-label-sm text-label-sm text-on-surface-variant hover:text-on-surface transition-colors" data-path="ml-model-&amp;-accuracy" href="#">ML Model &amp; Accuracy</a><a class="font-label-sm text-label-sm text-on-surface-variant hover:text-on-surface transition-colors" data-path="tariff-&amp;-prices" href="#">Tariff &amp; Prices</a><a class="font-label-sm text-label-sm text-on-surface-variant hover:text-on-surface transition-colors" data-path="regulatory-framework" href="#">LESCO Regulations</a><a class="font-label-sm text-label-sm text-on-surface-variant hover:text-on-surface transition-colors" data-path="privacy-policy" href="#">Privacy Policy</a></div></div></div></footer></body></html>

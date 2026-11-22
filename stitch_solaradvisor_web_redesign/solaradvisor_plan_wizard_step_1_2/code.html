@@ -1,0 +1,807 @@
+<!DOCTYPE html>
+
+<html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_standard" name="shell-type"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Plus+Jakarta+Sans:wght@600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = {
+    darkMode: "class",
+    theme: {
+      extend: {
+        "colors": {
+          "surface": "#f8f9ff",
+          "surface-container-high": "#dce9ff",
+          "error": "#ba1a1a",
+          "on-background": "#0b1c30",
+          "surface-bright": "#f8f9ff",
+          "on-secondary-container": "#00714e",
+          "outline-variant": "#c6c6cd",
+          "surface-container-lowest": "#ffffff",
+          "on-error": "#ffffff",
+          "inverse-primary": "#bec6e0",
+          "on-primary-fixed": "#131b2e",
+          "on-secondary-fixed": "#002114",
+          "primary-fixed-dim": "#bec6e0",
+          "on-primary": "#ffffff",
+          "primary-container": "#131b2e",
+          "inverse-surface": "#213145",
+          "surface-container": "#e5eeff",
+          "tertiary": "#000000",
+          "on-primary-fixed-variant": "#3f465c",
+          "on-error-container": "#93000a",
+          "on-surface-variant": "#45464d",
+          "secondary-fixed": "#85f8c4",
+          "primary-fixed": "#dae2fd",
+          "tertiary-container": "#2f1500",
+          "surface-dim": "#cbdbf5",
+          "surface-container-low": "#eff4ff",
+          "surface-tint": "#565e74",
+          "on-secondary": "#ffffff",
+          "on-tertiary-fixed-variant": "#6e3900",
+          "on-primary-container": "#7c839b",
+          "error-container": "#ffdad6",
+          "on-secondary-fixed-variant": "#005137",
+          "surface-variant": "#d3e4fe",
+          "on-tertiary": "#ffffff",
+          "tertiary-fixed-dim": "#ffb77d",
+          "surface-container-highest": "#d3e4fe",
+          "tertiary-fixed": "#ffdcc3",
+          "background": "#f8f9ff",
+          "on-surface": "#0b1c30",
+          "primary": "#000000",
+          "secondary-container": "#82f5c1",
+          "secondary-fixed-dim": "#68dba9",
+          "on-tertiary-container": "#c76c00",
+          "secondary": "#006c4a",
+          "outline": "#76777d",
+          "inverse-on-surface": "#eaf1ff",
+          "on-tertiary-fixed": "#2f1500"
+        },
+        "borderRadius": {
+          "DEFAULT": "0.25rem",
+          "lg": "0.5rem",
+          "xl": "0.75rem",
+          "full": "9999px"
+        },
+        "spacing": {
+          "margin-mobile": "1rem",
+          "space-md": "1rem",
+          "space-sm": "0.5rem",
+          "gutter": "1.5rem",
+          "margin": "2rem",
+          "space-lg": "1.5rem",
+          "space-xl": "2.5rem",
+          "space-xs": "0.25rem",
+          "gutter-mobile": "1rem"
+        },
+        "fontFamily": {
+          "body-md": [
+            "Inter"
+          ],
+          "numeric-xl": [
+            "Plus Jakarta Sans"
+          ],
+          "display-lg": [
+            "Plus Jakarta Sans"
+          ],
+          "headline-lg": [
+            "Plus Jakarta Sans"
+          ],
+          "headline-md": [
+            "Plus Jakarta Sans"
+          ],
+          "numeric-lg": [
+            "Plus Jakarta Sans"
+          ],
+          "body-sm": [
+            "Inter"
+          ],
+          "display-lg-mobile": [
+            "Plus Jakarta Sans"
+          ],
+          "label-md": [
+            "Inter"
+          ],
+          "label-sm": [
+            "Inter"
+          ],
+          "headline-sm": [
+            "Plus Jakarta Sans"
+          ],
+          "body-lg": [
+            "Inter"
+          ]
+        },
+        "fontSize": {
+          "body-md": [
+            "14px",
+            {
+              "lineHeight": "20px",
+              "fontWeight": "400"
+            }
+          ],
+          "numeric-xl": [
+            "32px",
+            {
+              "lineHeight": "38px",
+              "letterSpacing": "-0.02em",
+              "fontWeight": "700"
+            }
+          ],
+          "display-lg": [
+            "40px",
+            {
+              "lineHeight": "48px",
+              "letterSpacing": "-0.02em",
+              "fontWeight": "700"
+            }
+          ],
+          "headline-lg": [
+            "28px",
+            {
+              "lineHeight": "36px",
+              "letterSpacing": "-0.015em",
+              "fontWeight": "600"
+            }
+          ],
+          "headline-md": [
+            "22px",
+            {
+              "lineHeight": "30px",
+              "letterSpacing": "-0.01em",
+              "fontWeight": "600"
+            }
+          ],
+          "numeric-lg": [
+            "24px",
+            {
+              "lineHeight": "30px",
+              "fontWeight": "700"
+            }
+          ],
+          "body-sm": [
+            "12px",
+            {
+              "lineHeight": "18px",
+              "fontWeight": "400"
+            }
+          ],
+          "display-lg-mobile": [
+            "30px",
+            {
+              "lineHeight": "38px",
+              "letterSpacing": "-0.015em",
+              "fontWeight": "700"
+            }
+          ],
+          "label-md": [
+            "13px",
+            {
+              "lineHeight": "18px",
+              "letterSpacing": "0.01em",
+              "fontWeight": "600"
+            }
+          ],
+          "label-sm": [
+            "11px",
+            {
+              "lineHeight": "16px",
+              "letterSpacing": "0.04em",
+              "fontWeight": "600"
+            }
+          ],
+          "headline-sm": [
+            "18px",
+            {
+              "lineHeight": "26px",
+              "fontWeight": "600"
+            }
+          ],
+          "body-lg": [
+            "16px",
+            {
+              "lineHeight": "24px",
+              "fontWeight": "400"
+            }
+          ]
+        }
+      },
+    },
+  }</script></head><body class="bg-surface font-body-md text-on-surface"><header class="fixed top-0 w-full z-50 bg-surface/80 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="h-20 w-full px-margin flex items-center justify-between"><div class="flex items-center gap-space-md"><img alt="SolarAdvisor Logo" class="h-8 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/ALJJyrDOongyYQN0k22uyitZueCizCuTMfKA517WDkwBCDEUBfyFAxFidGAWkzNA9asF4BXnfgMtWmtnwFbBOajnU1LiXkBtGGOrDQk1o025mD3YpjkPQOuNOQmrP5FM_sk1vE7XtSyDf0A2mg8DM12TrWs1OHLx2YFwygRIKiWE_KQuz9UsvsnP47Hwn6FnKo-G4ZUZ3X5T1p2XJjWcGggJXNIuo0UkymJl5GN4rXaxtZnL"/><div class="flex items-center gap-space-xs"><span class="font-headline-sm text-headline-sm text-on-surface tracking-tight font-semibold">SolarAdvisor</span><span class="bg-surface-container-high text-on-surface px-space-xs py-0.5 rounded-full font-label-sm text-label-sm border border-outline-variant/30">Lahore / LESCO Beta</span></div><nav class="hidden lg:flex items-center gap-space-sm ml-space-lg" data-active-classes="bg-surface-container text-on-surface font-semibold rounded-lg"><a aria-current="page" class="px-space-md py-space-xs transition-colors bg-surface-container text-on-surface font-semibold rounded-lg" data-path="get-my-plan" href="#">Get My Plan</a><a class="px-space-md py-space-xs rounded-lg font-label-md text-label-md text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-colors" data-path="ml-model-&amp;-accuracy" href="#">ML Model &amp; Accuracy</a><a class="px-space-md py-space-xs rounded-lg font-label-md text-label-md text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-colors" data-path="tariff-&amp;-prices" href="#">Tariff &amp; Prices</a></nav></div><div class="flex items-center gap-space-md"><div class="hidden sm:flex items-center gap-space-xs px-space-md py-space-xs rounded-full bg-secondary-container/40 text-on-secondary-container font-label-sm text-label-sm border border-secondary-container"><span class="w-1.5 h-1.5 rounded-full bg-secondary"></span><span>100% Neutral &amp; Independent</span></div><a class="inline-flex items-center justify-center px-space-lg py-space-sm rounded-lg bg-tertiary text-on-tertiary font-label-md text-label-md hover:bg-on-background transition-colors shadow-sm" data-path="start-solar-feasibility" href="#">Start Solar Feasibility</a><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div></div></div></header><main class="w-full pt-20 bg-surface"><div class="flex flex-col w-full">
+<!-- Progress Stepper Tracker Bar -->
+<section class="w-full bg-surface-container-low py-space-md shadow-sm">
+<div class="max-w-7xl mx-auto px-margin">
+<div class="flex flex-col md:flex-row md:items-center justify-between gap-space-md">
+<!-- Step 1: Bills & Consumption (Active) -->
+<div class="flex items-center gap-space-sm group cursor-pointer flex-1">
+<div class="w-10 h-10 rounded-full bg-tertiary text-on-tertiary flex items-center justify-center font-headline-sm text-headline-sm shadow-md transition-transform group-hover:scale-105">
+<span class="material-symbols-outlined text-[20px]">receipt_long</span>
+</div>
+<div class="flex flex-col min-w-0">
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-on-tertiary-container font-semibold">Step 01 / Active</span>
+<span class="font-headline-sm text-headline-sm text-on-surface truncate">Bills &amp; Consumption</span>
+</div>
+</div>
+<div class="hidden md:block w-12 h-0.5 bg-surface-container-highest"></div>
+<!-- Step 2: Home & Appliances -->
+<div class="flex items-center gap-space-sm group cursor-pointer flex-1 opacity-90">
+<div class="w-10 h-10 rounded-full bg-surface-container-highest text-on-surface flex items-center justify-center font-headline-sm text-headline-sm shadow-sm">
+<span class="material-symbols-outlined text-[20px]">home_pin</span>
+</div>
+<div class="flex flex-col min-w-0">
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-on-surface-variant">Step 02 / In View</span>
+<span class="font-headline-sm text-headline-sm text-on-surface truncate">Home &amp; Appliances</span>
+</div>
+</div>
+<div class="hidden md:block w-12 h-0.5 bg-surface-container-highest"></div>
+<!-- Step 3: Roof Satellite Mapping -->
+<div class="flex items-center gap-space-sm group opacity-50 flex-1">
+<div class="w-10 h-10 rounded-full bg-surface-container-highest text-on-surface-variant flex items-center justify-center font-headline-sm text-headline-sm">
+<span class="material-symbols-outlined text-[20px]">satellite_alt</span>
+</div>
+<div class="flex flex-col min-w-0">
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-on-surface-variant">Step 03</span>
+<span class="font-headline-sm text-headline-sm text-on-surface-variant truncate">Roof Satellite Mapping</span>
+</div>
+</div>
+<div class="hidden md:block w-12 h-0.5 bg-surface-container-highest"></div>
+<!-- Step 4: Feasibility Results -->
+<div class="flex items-center gap-space-sm group opacity-50 flex-1">
+<div class="w-10 h-10 rounded-full bg-surface-container-highest text-on-surface-variant flex items-center justify-center font-headline-sm text-headline-sm">
+<span class="material-symbols-outlined text-[20px]">finance_mode</span>
+</div>
+<div class="flex flex-col min-w-0">
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-on-surface-variant">Step 04</span>
+<span class="font-headline-sm text-headline-sm text-on-surface-variant truncate">Feasibility &amp; ROI</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Main Wizard Layout Form Container -->
+<div class="max-w-7xl mx-auto px-margin py-space-xl w-full">
+<!-- Top Metadata Header Strip -->
+<div class="flex flex-col md:flex-row md:items-end justify-between gap-space-md mb-space-xl">
+<div>
+<div class="flex items-center gap-space-xs text-on-tertiary-container font-label-md text-label-md mb-space-xs">
+<span class="material-symbols-outlined text-[18px]">verified</span>
+<span>Institutional Grade LESCO Tariff Engine v2.4</span>
+</div>
+<h1 class="font-display-lg text-display-lg text-on-surface font-bold tracking-tight">System Specification &amp; Consumption Audit</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant mt-1">Provide your previous 12-month electricity units to calculate accurate winter baseload vs. summer cooling loads.</p>
+</div>
+<!-- Quick Action Utilities -->
+<div class="flex items-center gap-space-sm shrink-0">
+<button class="px-space-md py-space-sm bg-surface-container text-on-surface-variant hover:text-error hover:bg-error-container/40 rounded-lg font-label-md text-label-md transition-colors flex items-center gap-space-xs" onclick="clearBillInputs()" type="button">
+<span class="material-symbols-outlined text-[18px]">delete_sweep</span>
+          Clear All
+        </button>
+<button class="px-space-md py-space-sm bg-surface-container-high text-on-surface rounded-lg font-label-md text-label-md hover:bg-surface-container transition-colors flex items-center gap-space-xs shadow-sm" type="button">
+<span class="material-symbols-outlined text-[18px]">add_circle</span>
+          + Add Another Meter
+        </button>
+</div>
+</div>
+<!-- Multi-Column Feasibility Input Area -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-space-xl">
+<!-- LEFT & CENTER: STEP 1 - BILLS & CONSUMPTION (7 cols) -->
+<div class="lg:col-span-7 flex flex-col gap-space-lg">
+<!-- Meter 1 Card Wrapper -->
+<div class="bg-surface-container-lowest rounded-xl p-space-lg shadow-sm flex flex-col gap-space-lg relative overflow-hidden">
+<div class="absolute top-0 left-0 w-1.5 h-full bg-tertiary"></div>
+<!-- Meter Header Info -->
+<div class="flex items-start justify-between flex-wrap gap-space-sm">
+<div>
+<div class="flex items-center gap-space-xs">
+<span class="font-headline-md text-headline-md text-on-surface font-bold">Meter 1: Primary Domestic Connection (A-1)</span>
+<span class="bg-secondary-container/50 text-on-secondary-container font-label-sm text-label-sm px-space-xs py-0.5 rounded-full font-semibold">Single Phase / 3-Phase</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1">Tariff Schedule: LESCO Residential Slab A-1 (Peak vs Off-Peak protected)</p>
+</div>
+<div class="flex items-center gap-1.5 bg-surface-container-low px-space-sm py-1 rounded-lg">
+<span class="material-symbols-outlined text-secondary text-[16px]">bolt</span>
+<span class="font-label-sm text-label-sm text-on-surface font-semibold" id="totalUnitsSum">Annual: 7,420 kWh</span>
+</div>
+</div>
+<!-- Drag and Drop OCR Bill Upload Zone -->
+<div class="bg-surface-container-low hover:bg-surface-container transition-all cursor-pointer rounded-xl p-space-lg flex flex-col items-center justify-center text-center relative group" id="dropzone">
+<input accept="image/*,application/pdf" class="absolute inset-0 opacity-0 cursor-pointer z-10" id="billFileInput" onchange="simulateOcrUpload(event)" type="file"/>
+<div class="w-14 h-14 rounded-full bg-surface-container-highest text-on-surface flex items-center justify-center mb-space-sm group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined text-[28px] text-tertiary">document_scanner</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface font-semibold">Upload LESCO Bill Photo (or PDF)</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant max-w-md mt-1">
+              Auto-detects 12-month billing history table. Typical OCR read: &lt; 45s. Always verify parsed numbers.
+            </p>
+<div class="flex items-center gap-space-md mt-space-md flex-wrap justify-center">
+<span class="inline-flex items-center gap-1 font-label-sm text-label-sm bg-surface-container-lowest px-space-sm py-1 rounded-md text-on-surface-variant shadow-sm">
+<span class="material-symbols-outlined text-[14px] text-secondary">check_circle</span> Consumer No. Auto-Crop
+              </span>
+<span class="inline-flex items-center gap-1 font-label-sm text-label-sm bg-surface-container-lowest px-space-sm py-1 rounded-md text-on-surface-variant shadow-sm">
+<span class="material-symbols-outlined text-[14px] text-secondary">check_circle</span> Multi-Column Extraction
+              </span>
+<span class="inline-flex items-center gap-1 font-label-sm text-label-sm bg-surface-container-lowest px-space-sm py-1 rounded-md text-on-surface-variant shadow-sm">
+<span class="material-symbols-outlined text-[14px] text-secondary">check_circle</span> Privacy Preserved (Local Memory)
+              </span>
+</div>
+<!-- OCR Progress Bar (Simulated state) -->
+<div class="hidden w-full mt-space-md pt-space-sm" id="ocrStatus">
+<div class="flex items-center justify-between text-body-sm font-label-sm text-on-surface-variant mb-1">
+<span class="flex items-center gap-1 text-on-secondary-container">
+<span class="material-symbols-outlined text-[16px] animate-spin">sync</span> Extracting LESCO unit matrices...
+                </span>
+<span class="font-semibold text-on-surface" id="ocrPercent">64%</span>
+</div>
+<div class="w-full h-2 rounded-full bg-surface-container-highest overflow-hidden">
+<div class="h-full bg-secondary transition-all duration-300" style="width: 64%"></div>
+</div>
+</div>
+</div>
+<!-- Monthly Historical Grid Matrix -->
+<div>
+<div class="flex items-center justify-between mb-space-sm">
+<div class="flex items-center gap-space-xs">
+<span class="font-headline-sm text-headline-sm text-on-surface font-bold">12-Month Consumption Record</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">(Billing year 2023–2024)</span>
+</div>
+<div class="flex items-center gap-space-md">
+<div class="flex items-center gap-1">
+<span class="w-2.5 h-2.5 rounded-full bg-tertiary-fixed-dim"></span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Summer Peak</span>
+</div>
+<div class="flex items-center gap-1">
+<span class="w-2.5 h-2.5 rounded-full bg-surface-container-highest"></span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Base Load</span>
+</div>
+</div>
+</div>
+<!-- 12 Month Grid -->
+<div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-space-sm" id="monthsGrid">
+<!-- Jan -->
+<div class="bg-surface p-space-sm rounded-lg shadow-sm flex flex-col justify-between">
+<div class="flex items-center justify-between mb-1">
+<span class="font-label-md text-label-md font-semibold text-on-surface">Jan</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Winter</span>
+</div>
+<div class="relative">
+<input class="month-unit-input w-full bg-surface-container-lowest text-on-surface font-numeric-lg text-numeric-lg font-bold py-1 px-2 rounded focus:outline-none focus:bg-surface-container-high transition-colors" oninput="recalcTotals()" type="number" value="280"/>
+<span class="absolute right-2 top-2 font-label-sm text-label-sm text-on-surface-variant pointer-events-none">kWh</span>
+</div>
+</div>
+<!-- Feb -->
+<div class="bg-surface p-space-sm rounded-lg shadow-sm flex flex-col justify-between">
+<div class="flex items-center justify-between mb-1">
+<span class="font-label-md text-label-md font-semibold text-on-surface">Feb</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Winter</span>
+</div>
+<div class="relative">
+<input class="month-unit-input w-full bg-surface-container-lowest text-on-surface font-numeric-lg text-numeric-lg font-bold py-1 px-2 rounded focus:outline-none focus:bg-surface-container-high transition-colors" oninput="recalcTotals()" type="number" value="260"/>
+<span class="absolute right-2 top-2 font-label-sm text-label-sm text-on-surface-variant pointer-events-none">kWh</span>
+</div>
+</div>
+<!-- Mar -->
+<div class="bg-surface p-space-sm rounded-lg shadow-sm flex flex-col justify-between">
+<div class="flex items-center justify-between mb-1">
+<span class="font-label-md text-label-md font-semibold text-on-surface">Mar</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Spring</span>
+</div>
+<div class="relative">
+<input class="month-unit-input w-full bg-surface-container-lowest text-on-surface font-numeric-lg text-numeric-lg font-bold py-1 px-2 rounded focus:outline-none focus:bg-surface-container-high transition-colors" oninput="recalcTotals()" type="number" value="340"/>
+<span class="absolute right-2 top-2 font-label-sm text-label-sm text-on-surface-variant pointer-events-none">kWh</span>
+</div>
+</div>
+<!-- Apr -->
+<div class="bg-surface p-space-sm rounded-lg shadow-sm flex flex-col justify-between">
+<div class="flex items-center justify-between mb-1">
+<span class="font-label-md text-label-md font-semibold text-on-surface">Apr</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Spring</span>
+</div>
+<div class="relative">
+<input class="month-unit-input w-full bg-surface-container-lowest text-on-surface font-numeric-lg text-numeric-lg font-bold py-1 px-2 rounded focus:outline-none focus:bg-surface-container-high transition-colors" oninput="recalcTotals()" type="number" value="510"/>
+<span class="absolute right-2 top-2 font-label-sm text-label-sm text-on-surface-variant pointer-events-none">kWh</span>
+</div>
+</div>
+<!-- May -->
+<div class="bg-surface p-space-sm rounded-lg shadow-sm flex flex-col justify-between">
+<div class="flex items-center justify-between mb-1">
+<span class="font-label-md text-label-md font-semibold text-on-surface">May</span>
+<span class="font-label-sm text-label-sm text-on-tertiary-container font-semibold">Pre-peak</span>
+</div>
+<div class="relative">
+<input class="month-unit-input w-full bg-surface-container-lowest text-on-surface font-numeric-lg text-numeric-lg font-bold py-1 px-2 rounded focus:outline-none focus:bg-surface-container-high transition-colors" oninput="recalcTotals()" type="number" value="790"/>
+<span class="absolute right-2 top-2 font-label-sm text-label-sm text-on-surface-variant pointer-events-none">kWh</span>
+</div>
+</div>
+<!-- Jun (Summer Peak) -->
+<div class="bg-surface-container-highest p-space-sm rounded-lg shadow-sm flex flex-col justify-between ring-2 ring-tertiary-container/20">
+<div class="flex items-center justify-between mb-1">
+<span class="font-label-md text-label-md font-bold text-on-surface flex items-center gap-1">
+                    Jun <span class="material-symbols-outlined text-[14px] text-error">local_fire_department</span>
+</span>
+<span class="font-label-sm text-label-sm bg-tertiary-fixed text-on-tertiary-fixed px-1 rounded font-semibold">Peak</span>
+</div>
+<div class="relative">
+<input class="month-unit-input w-full bg-surface-container-lowest text-on-surface font-numeric-lg text-numeric-lg font-bold py-1 px-2 rounded focus:outline-none focus:bg-surface-container-high transition-colors" oninput="recalcTotals()" type="number" value="1120"/>
+<span class="absolute right-2 top-2 font-label-sm text-label-sm text-on-surface-variant pointer-events-none">kWh</span>
+</div>
+</div>
+<!-- Jul (Summer Peak) -->
+<div class="bg-surface-container-highest p-space-sm rounded-lg shadow-sm flex flex-col justify-between ring-2 ring-tertiary-container/20">
+<div class="flex items-center justify-between mb-1">
+<span class="font-label-md text-label-md font-bold text-on-surface flex items-center gap-1">
+                    Jul <span class="material-symbols-outlined text-[14px] text-error">local_fire_department</span>
+</span>
+<span class="font-label-sm text-label-sm bg-tertiary-fixed text-on-tertiary-fixed px-1 rounded font-semibold">Peak</span>
+</div>
+<div class="relative">
+<input class="month-unit-input w-full bg-surface-container-lowest text-on-surface font-numeric-lg text-numeric-lg font-bold py-1 px-2 rounded focus:outline-none focus:bg-surface-container-high transition-colors" oninput="recalcTotals()" type="number" value="1280"/>
+<span class="absolute right-2 top-2 font-label-sm text-label-sm text-on-surface-variant pointer-events-none">kWh</span>
+</div>
+</div>
+<!-- Aug (Summer Peak) -->
+<div class="bg-surface-container-highest p-space-sm rounded-lg shadow-sm flex flex-col justify-between ring-2 ring-tertiary-container/20">
+<div class="flex items-center justify-between mb-1">
+<span class="font-label-md text-label-md font-bold text-on-surface flex items-center gap-1">
+                    Aug <span class="material-symbols-outlined text-[14px] text-error">local_fire_department</span>
+</span>
+<span class="font-label-sm text-label-sm bg-tertiary-fixed text-on-tertiary-fixed px-1 rounded font-semibold">Peak</span>
+</div>
+<div class="relative">
+<input class="month-unit-input w-full bg-surface-container-lowest text-on-surface font-numeric-lg text-numeric-lg font-bold py-1 px-2 rounded focus:outline-none focus:bg-surface-container-high transition-colors" oninput="recalcTotals()" type="number" value="1190"/>
+<span class="absolute right-2 top-2 font-label-sm text-label-sm text-on-surface-variant pointer-events-none">kWh</span>
+</div>
+</div>
+<!-- Sep -->
+<div class="bg-surface p-space-sm rounded-lg shadow-sm flex flex-col justify-between">
+<div class="flex items-center justify-between mb-1">
+<span class="font-label-md text-label-md font-semibold text-on-surface">Sep</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Post-peak</span>
+</div>
+<div class="relative">
+<input class="month-unit-input w-full bg-surface-container-lowest text-on-surface font-numeric-lg text-numeric-lg font-bold py-1 px-2 rounded focus:outline-none focus:bg-surface-container-high transition-colors" oninput="recalcTotals()" type="number" value="840"/>
+<span class="absolute right-2 top-2 font-label-sm text-label-sm text-on-surface-variant pointer-events-none">kWh</span>
+</div>
+</div>
+<!-- Oct -->
+<div class="bg-surface p-space-sm rounded-lg shadow-sm flex flex-col justify-between">
+<div class="flex items-center justify-between mb-1">
+<span class="font-label-md text-label-md font-semibold text-on-surface">Oct</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Autumn</span>
+</div>
+<div class="relative">
+<input class="month-unit-input w-full bg-surface-container-lowest text-on-surface font-numeric-lg text-numeric-lg font-bold py-1 px-2 rounded focus:outline-none focus:bg-surface-container-high transition-colors" oninput="recalcTotals()" type="number" value="480"/>
+<span class="absolute right-2 top-2 font-label-sm text-label-sm text-on-surface-variant pointer-events-none">kWh</span>
+</div>
+</div>
+<!-- Nov -->
+<div class="bg-surface p-space-sm rounded-lg shadow-sm flex flex-col justify-between">
+<div class="flex items-center justify-between mb-1">
+<span class="font-label-md text-label-md font-semibold text-on-surface">Nov</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Winter</span>
+</div>
+<div class="relative">
+<input class="month-unit-input w-full bg-surface-container-lowest text-on-surface font-numeric-lg text-numeric-lg font-bold py-1 px-2 rounded focus:outline-none focus:bg-surface-container-high transition-colors" oninput="recalcTotals()" type="number" value="310"/>
+<span class="absolute right-2 top-2 font-label-sm text-label-sm text-on-surface-variant pointer-events-none">kWh</span>
+</div>
+</div>
+<!-- Dec -->
+<div class="bg-surface p-space-sm rounded-lg shadow-sm flex flex-col justify-between">
+<div class="flex items-center justify-between mb-1">
+<span class="font-label-md text-label-md font-semibold text-on-surface">Dec</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Winter</span>
+</div>
+<div class="relative">
+<input class="month-unit-input w-full bg-surface-container-lowest text-on-surface font-numeric-lg text-numeric-lg font-bold py-1 px-2 rounded focus:outline-none focus:bg-surface-container-high transition-colors" oninput="recalcTotals()" type="number" value="250"/>
+<span class="absolute right-2 top-2 font-label-sm text-label-sm text-on-surface-variant pointer-events-none">kWh</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Seasonal Consumption Sparkline Profile Chart -->
+<div class="bg-surface-container-low rounded-lg p-space-md">
+<div class="flex items-center justify-between mb-2">
+<span class="font-label-md text-label-md font-semibold text-on-surface">Annual Load Shape &amp; LESCO Slab Impact</span>
+<span class="font-label-sm text-label-sm text-secondary font-medium">Summer Peak: 3.8x of Winter Base</span>
+</div>
+<!-- Inline Chart: 12-month Sparkline Profile -->
+<div class="w-full h-24 flex items-end gap-1.5 pt-4">
+<div class="flex-1 bg-surface-container-high hover:bg-tertiary-fixed-dim rounded-t h-[22%] transition-all" title="Jan: 280"></div>
+<div class="flex-1 bg-surface-container-high hover:bg-tertiary-fixed-dim rounded-t h-[20%] transition-all" title="Feb: 260"></div>
+<div class="flex-1 bg-surface-container-high hover:bg-tertiary-fixed-dim rounded-t h-[26%] transition-all" title="Mar: 340"></div>
+<div class="flex-1 bg-surface-container-high hover:bg-tertiary-fixed-dim rounded-t h-[40%] transition-all" title="Apr: 510"></div>
+<div class="flex-1 bg-surface-container-highest hover:bg-tertiary-fixed-dim rounded-t h-[62%] transition-all" title="May: 790"></div>
+<div class="flex-1 bg-tertiary-fixed hover:bg-tertiary rounded-t h-[88%] transition-all relative group" title="Jun: 1120">
+<span class="hidden group-hover:block absolute -top-6 left-1/2 -translate-x-1/2 bg-on-surface text-on-primary text-[10px] py-0.5 px-1 rounded shadow">1120</span>
+</div>
+<div class="flex-1 bg-tertiary-fixed-dim hover:bg-tertiary rounded-t h-[100%] transition-all relative group" title="Jul: 1280">
+<span class="hidden group-hover:block absolute -top-6 left-1/2 -translate-x-1/2 bg-on-surface text-on-primary text-[10px] py-0.5 px-1 rounded shadow">1280</span>
+</div>
+<div class="flex-1 bg-tertiary-fixed hover:bg-tertiary rounded-t h-[93%] transition-all relative group" title="Aug: 1190">
+<span class="hidden group-hover:block absolute -top-6 left-1/2 -translate-x-1/2 bg-on-surface text-on-primary text-[10px] py-0.5 px-1 rounded shadow">1190</span>
+</div>
+<div class="flex-1 bg-surface-container-highest hover:bg-tertiary-fixed-dim rounded-t h-[66%] transition-all" title="Sep: 840"></div>
+<div class="flex-1 bg-surface-container-high hover:bg-tertiary-fixed-dim rounded-t h-[38%] transition-all" title="Oct: 480"></div>
+<div class="flex-1 bg-surface-container-high hover:bg-tertiary-fixed-dim rounded-t h-[24%] transition-all" title="Nov: 310"></div>
+<div class="flex-1 bg-surface-container-high hover:bg-tertiary-fixed-dim rounded-t h-[19%] transition-all" title="Dec: 250"></div>
+</div>
+<div class="flex justify-between text-body-sm text-[11px] text-on-surface-variant mt-1.5 px-0.5">
+<span>Jan</span><span>Mar</span><span>Jun</span><span>Aug</span><span>Oct</span><span>Dec</span>
+</div>
+</div>
+</div>
+</div>
+<!-- RIGHT: STEP 2 - HOME SPECIFICATIONS & APPLIANCE AI (5 cols) -->
+<div class="lg:col-span-5 flex flex-col gap-space-lg">
+<div class="bg-surface-container-lowest rounded-xl p-space-lg shadow-sm flex flex-col gap-space-md">
+<div class="flex items-center justify-between pb-space-sm">
+<div>
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-on-tertiary-container font-semibold">Step 02 Scope</span>
+<h2 class="font-headline-md text-headline-md text-on-surface font-bold">Home &amp; Appliance Profile</h2>
+</div>
+<span class="material-symbols-outlined text-on-surface-variant text-[24px]">tune</span>
+</div>
+<!-- Property Size Selector: Marla System -->
+<div>
+<label class="block font-label-md text-label-md text-on-surface font-medium mb-1.5">Plot Size (Lahore Standard)</label>
+<div class="grid grid-cols-4 gap-space-xs">
+<button class="plot-btn active-plot py-2 text-center rounded-lg font-label-md text-label-md bg-tertiary text-on-tertiary font-semibold transition-all" type="button">
+                5 Marla
+              </button>
+<button class="plot-btn py-2 text-center rounded-lg font-label-md text-label-md bg-surface-container hover:bg-surface-container-high text-on-surface font-medium transition-all" type="button">
+                10 Marla
+              </button>
+<button class="plot-btn py-2 text-center rounded-lg font-label-md text-label-md bg-surface-container hover:bg-surface-container-high text-on-surface font-medium transition-all" type="button">
+                1 Kanal
+              </button>
+<button class="plot-btn py-2 text-center rounded-lg font-label-md text-label-md bg-surface-container hover:bg-surface-container-high text-on-surface font-medium transition-all" type="button">
+                Custom
+              </button>
+</div>
+</div>
+<!-- Occupants & Sanctioned Load Grid -->
+<div class="grid grid-cols-2 gap-space-md">
+<div>
+<label class="block font-label-md text-label-md text-on-surface font-medium mb-1">Occupants</label>
+<div class="relative">
+<input class="w-full bg-surface-container-low text-on-surface font-headline-sm text-headline-sm font-semibold py-2 px-3 rounded-lg focus:outline-none focus:bg-surface-container-high" max="25" min="1" type="number" value="6"/>
+<span class="absolute right-3 top-2.5 font-label-sm text-label-sm text-on-surface-variant pointer-events-none">People</span>
+</div>
+</div>
+<div>
+<label class="block font-label-md text-label-md text-on-surface font-medium mb-1">Sanctioned Load</label>
+<div class="relative">
+<input class="w-full bg-surface-container-low text-on-surface font-headline-sm text-headline-sm font-semibold py-2 px-3 rounded-lg focus:outline-none focus:bg-surface-container-high" max="50" min="1" type="number" value="10"/>
+<span class="absolute right-3 top-2.5 font-label-sm text-label-sm text-on-surface-variant pointer-events-none">kW</span>
+</div>
+</div>
+</div>
+<!-- Natural Language Appliance Input & AI Parser -->
+<div class="pt-space-xs">
+<div class="flex items-center justify-between mb-1">
+<label class="font-label-md text-label-md text-on-surface font-semibold flex items-center gap-1">
+<span>Intelligent Natural Language Appliance Input</span>
+<span class="material-symbols-outlined text-[16px] text-on-tertiary-container" title="Type natural text. Our local parser matches Lahore-specific loads.">psychology</span>
+</label>
+<span class="font-label-sm text-label-sm text-secondary font-medium">Real-time parser</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mb-2">Type your heavy loads freely; we calculate surge ratings and inverter sizing automatically.</p>
+<div class="relative mb-space-sm">
+<textarea class="w-full bg-surface-container-low text-on-surface font-body-md text-body-md p-3 rounded-lg focus:outline-none focus:bg-surface-container-high resize-none transition-colors" id="applianceText" oninput="parseApplianceChips()" placeholder="e.g. 2 1.5-ton inverter ACs, 1 deep freezer, 1 water pump, 8 ceiling fans, 1 UPS backup" rows="2"></textarea>
+</div>
+<!-- Parsed Live Chips Display Container -->
+<div>
+<span class="font-label-sm text-label-sm uppercase tracking-wide text-on-surface-variant block mb-1.5 font-semibold">Active Parsed Load Clusters:</span>
+<div class="flex flex-wrap gap-1.5 min-h-[44px] p-2 bg-surface-container-low rounded-lg" id="chipsContainer">
+<span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-md bg-secondary-container text-on-secondary-container font-label-sm text-label-sm font-semibold shadow-sm">
+<span class="material-symbols-outlined text-[14px]">ac_unit</span> 2x 1.5T Inverter AC (3.2 kW)
+                  <button class="hover:text-error ml-1" type="button">×</button>
+</span>
+<span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-md bg-secondary-container text-on-secondary-container font-label-sm text-label-sm font-semibold shadow-sm">
+<span class="material-symbols-outlined text-[14px]">kitchen</span> 1x Deep Freezer (350 W)
+                  <button class="hover:text-error ml-1" type="button">×</button>
+</span>
+<span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-md bg-secondary-container text-on-secondary-container font-label-sm text-label-sm font-semibold shadow-sm">
+<span class="material-symbols-outlined text-[14px]">water_damage</span> 1x Water Pump (1.0 HP)
+                  <button class="hover:text-error ml-1" type="button">×</button>
+</span>
+<span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-md bg-secondary-container text-on-secondary-container font-label-sm text-label-sm font-semibold shadow-sm">
+<span class="material-symbols-outlined text-[14px]">mode_fan</span> 8x Ceiling Fans (560 W)
+                  <button class="hover:text-error ml-1" type="button">×</button>
+</span>
+<span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-md bg-tertiary-fixed text-on-tertiary-fixed font-label-sm text-label-sm font-medium shadow-sm">
+<span class="material-symbols-outlined text-[14px]">help</span> 1x UPS backup (Unmetered)
+                  <button class="hover:text-error ml-1" type="button">×</button>
+</span>
+</div>
+</div>
+</div>
+<!-- Ethical AI, Privacy & Existing Solar Conditionals -->
+<div class="pt-space-sm flex flex-col gap-space-sm">
+<label class="flex items-start gap-space-sm cursor-pointer select-none">
+<input checked="" class="mt-1 w-4 h-4 rounded text-tertiary focus:ring-0 accent-tertiary" type="checkbox"/>
+<span class="font-body-sm text-body-sm text-on-surface">
+<strong>Anonymized AI contribution:</strong> I consent to include monthly units in the open Lahore solar dataset. (No consumer name, phone, or LESCO reference number is ever stored).
+              </span>
+</label>
+<label class="flex items-start gap-space-sm cursor-pointer select-none">
+<input class="mt-1 w-4 h-4 rounded text-tertiary focus:ring-0 accent-tertiary" id="existingSolarCheckbox" onchange="toggleSolarWarning(this)" type="checkbox"/>
+<span class="font-body-sm text-body-sm text-on-surface">
+                This property already has an operational grid-tied or hybrid solar system.
+              </span>
+</label>
+<!-- Dynamic Existing Solar Warning Note -->
+<div class="hidden bg-tertiary-fixed-dim/30 p-space-sm rounded-lg flex items-start gap-space-xs text-on-tertiary-container" id="solarWarningNote">
+<span class="material-symbols-outlined text-[18px] shrink-0 mt-0.5">warning</span>
+<p class="font-body-sm text-body-sm">
+<strong>Attention:</strong> Since your property already features solar panels, the billing numbers uploaded represent <em>net grid units consumed</em>, not gross household load. Our algorithm will adjust the baseline to prevent undersizing.
+              </p>
+</div>
+</div>
+</div>
+<!-- Next Action Transition Card -->
+<div class="bg-surface-container-high rounded-xl p-space-md flex flex-col gap-space-sm shadow-sm">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-space-xs text-on-surface font-label-md text-label-md">
+<span class="material-symbols-outlined text-secondary text-[20px]">verified_user</span>
+<span>Input Validation Status: Ready</span>
+</div>
+<span class="font-label-sm text-label-sm text-on-surface-variant font-mono">12/12 Months</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+            Data validated against Lahore solar geometry &amp; LESCO slab rates. Next step lets you outline your exact roof polygon via satellite imagery.
+          </p>
+<a class="w-full inline-flex items-center justify-center gap-space-sm px-space-lg py-space-md rounded-lg bg-tertiary text-on-tertiary font-label-md text-label-md font-semibold hover:bg-on-background transition-all shadow-md group" data-path="roof-mapping" href="#">
+<span>Save &amp; Continue to Roof Mapping</span>
+<span class="material-symbols-outlined text-[18px] group-hover:translate-x-1 transition-transform">arrow_forward</span>
+</a>
+</div>
+</div>
+</div>
+<!-- Visual Architecture & Benchmark Showcase Mosaic -->
+<div class="mt-space-xl pt-space-lg">
+<div class="flex items-center justify-between mb-space-md">
+<div>
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-on-surface-variant font-semibold">Lahore Solar Context</span>
+<h3 class="font-headline-sm text-headline-sm text-on-surface font-bold">Standard Residential Installations Across Punjab</h3>
+</div>
+<span class="font-label-sm text-label-sm text-secondary font-medium flex items-center gap-1">
+<span class="w-2 h-2 rounded-full bg-secondary"></span> Verified LESCO Green-Meter Projects
+        </span>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-space-md">
+<!-- Photo 1: DHA Lahore Rooftop -->
+<div class="relative rounded-xl overflow-hidden shadow-sm group h-48 bg-surface-container">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="Modern rooftop residential solar array on a contemporary concrete house in DHA Phase 6 Lahore during golden afternoon sunlight, sleek monocrystalline panels with elevated galvanized mounting structures." src="https://lh3.googleusercontent.com/aida-public/AB6AXuC7sYxwQn5ZKB0NMjvw-Nwv_7uX0mCOtlqNoMaI2O3ZwVbSWjuIMZrEboQPO0gjqH7GsMJV20JvGwE8CxkL0JZ8b9-Ke1irMS_4MoB8-UJ7VolOIgrOZPgmcZGuphg4WLAQsb9QlXtHHJhFQlHibtIyPzxwRA_EEW8OHpZM-L2OemD5meuCbndHMDUw_ghf8K-B9dEpJIIGMJKxb-g8ALTkvjUVPiUyoZaSFQcx_SHg"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent flex flex-col justify-end p-space-md text-white">
+<span class="text-xs uppercase tracking-wider font-semibold text-secondary-fixed">DHA Phase 6 • 1 Kanal</span>
+<span class="font-label-md text-label-md font-bold">15 kW On-Grid System with Net-Metering</span>
+<span class="text-xs text-white/80">Average Generation: 1,950 units / month</span>
+</div>
+</div>
+<!-- Photo 2: Model Town Rooftop -->
+<div class="relative rounded-xl overflow-hidden shadow-sm group h-48 bg-surface-container">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="High quality elevated residential rooftop solar installation on a brick villa in Model Town Lahore with clean cable management, inverter station mounted on covered terrace." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAdsyG2poo_Qnu06UZjkaS6_fi2ekhFmClL_C7mGz8yLqbsC5vp-IwEpfonN4l7ytO5Y01GFbWXYczB0t1yh36qxax7svyCd6GqiPpJrYN0Xb2lr23H23v530U8yDKfLckn8W-X6AK3hF_K4Px50VteK5-0h56yZTeCyuEAQ9JpNNqoGp-YR9Nw4BObsjiuY8zBpPdPMfpW756gQrRHQ3-NQC3j_Egnb83PkJJiMq35"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent flex flex-col justify-end p-space-md text-white">
+<span class="text-xs uppercase tracking-wider font-semibold text-secondary-fixed">Model Town • 10 Marla</span>
+<span class="font-label-md text-label-md font-bold">10 kW Hybrid System with Lithium Storage</span>
+<span class="text-xs text-white/80">Zero Peak Tariff Reliance Achieved</span>
+</div>
+</div>
+<!-- Photo 3: Bahria Town Installation -->
+<div class="relative rounded-xl overflow-hidden shadow-sm group h-48 bg-surface-container">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="Bifacial tier-1 solar panels installed on a modern compact 5 Marla home rooftop in Bahria Town Lahore overlooking suburban skyline with sunny blue sky." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDaTFcgDrem9_5wjQKmhxFOvomzSI681NTvFi5HeNv_2ruVxouqBsPh8le2FT8Jp6-IWOW2BgCbnqT2nObox0olN1_3jiu6HTVFxIExCdqoJSpOE38KUbw3q_dkaZHHruxGtT-D0ms4pgx_E1hCFJ_72rXs8pR6c5s_ZM79NuGVGU1bX4Z8O1PurZTjVhUEMFngMDzkQyq7bNUvxykHIIJJR5c2l8u-gk6RBrzcIjHj"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent flex flex-col justify-end p-space-md text-white">
+<span class="text-xs uppercase tracking-wider font-semibold text-secondary-fixed">Bahria Town • 5 Marla</span>
+<span class="font-label-md text-label-md font-bold">5 kW Micro-Array Optimized for Tight Roofs</span>
+<span class="text-xs text-white/80">Payback Period: 2.7 Years</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Inline Script for Realistic Wizard Interactions -->
+<script>
+    function recalcTotals() {
+      const inputs = document.querySelectorAll('.month-unit-input');
+      let sum = 0;
+      inputs.forEach(input => {
+        const val = parseInt(input.value) || 0;
+        sum += val;
+      });
+      const badge = document.getElementById('totalUnitsSum');
+      if (badge) {
+        badge.textContent = 'Annual: ' + sum.toLocaleString() + ' kWh';
+      }
+    }
+
+    function clearBillInputs() {
+      const inputs = document.querySelectorAll('.month-unit-input');
+      inputs.forEach(input => {
+        input.value = '';
+      });
+      recalcTotals();
+    }
+
+    function simulateOcrUpload(event) {
+      if (!event.target.files || !event.target.files[0]) return;
+      const ocrBar = document.getElementById('ocrStatus');
+      const ocrPercent = document.getElementById('ocrPercent');
+      if (!ocrBar || !ocrPercent) return;
+
+      ocrBar.classList.remove('hidden');
+      let progress = 10;
+      const interval = setInterval(() => {
+        progress += 18;
+        if (progress > 100) {
+          progress = 100;
+          clearInterval(interval);
+          setTimeout(() => {
+            ocrBar.classList.add('hidden');
+          }, 800);
+        }
+        ocrPercent.textContent = progress + '%';
+      }, 120);
+    }
+
+    function parseApplianceChips() {
+      const text = document.getElementById('applianceText').value.toLowerCase();
+      const container = document.getElementById('chipsContainer');
+      if (!container) return;
+
+      if (text.trim() === '') {
+        container.innerHTML = '<span class="text-on-surface-variant font-label-sm text-label-sm p-1">Type in appliances above to view parsed loads...</span>';
+        return;
+      }
+
+      let chipsHtml = '';
+      if (text.includes('ac') || text.includes('ton')) {
+        chipsHtml += `<span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-md bg-secondary-container text-on-secondary-container font-label-sm text-label-sm font-semibold shadow-sm">
+          <span class="material-symbols-outlined text-[14px]">ac_unit</span> Parsed Air Conditioner Load
+        </span>`;
+      }
+      if (text.includes('pump') || text.includes('water') || text.includes('motor')) {
+        chipsHtml += `<span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-md bg-secondary-container text-on-secondary-container font-label-sm text-label-sm font-semibold shadow-sm">
+          <span class="material-symbols-outlined text-[14px]">water_damage</span> Water Induction Pump (Surge Rated)
+        </span>`;
+      }
+      if (text.includes('freezer') || text.includes('fridge')) {
+        chipsHtml += `<span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-md bg-secondary-container text-on-secondary-container font-label-sm text-label-sm font-semibold shadow-sm">
+          <span class="material-symbols-outlined text-[14px]">kitchen</span> Refrigeration Compressor
+        </span>`;
+      }
+      if (text.includes('fan')) {
+        chipsHtml += `<span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-md bg-secondary-container text-on-secondary-container font-label-sm text-label-sm font-semibold shadow-sm">
+          <span class="material-symbols-outlined text-[14px]">mode_fan</span> Ceiling / Exhaust Fans
+        </span>`;
+      }
+
+      if (chipsHtml === '') {
+        chipsHtml = `<span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-md bg-tertiary-fixed text-on-tertiary-fixed font-label-sm text-label-sm shadow-sm">
+          <span class="material-symbols-outlined text-[14px]">query_builder</span> Analyzing custom appliance footprint...
+        </span>`;
+      }
+
+      container.innerHTML = chipsHtml;
+    }
+
+    function toggleSolarWarning(checkbox) {
+      const note = document.getElementById('solarWarningNote');
+      if (note) {
+        if (checkbox.checked) {
+          note.classList.remove('hidden');
+        } else {
+          note.classList.add('hidden');
+        }
+      }
+    }
+
+    // Interactive Plot Selector
+    document.querySelectorAll('.plot-btn').forEach(btn => {
+      btn.addEventListener('click', function() {
+        document.querySelectorAll('.plot-btn').forEach(b => {
+          b.classList.remove('bg-tertiary', 'text-on-tertiary', 'font-semibold');
+          b.classList.add('bg-surface-container', 'text-on-surface', 'font-medium');
+        });
+        this.classList.remove('bg-surface-container', 'text-on-surface', 'font-medium');
+        this.classList.add('bg-tertiary', 'text-on-tertiary', 'font-semibold');
+      });
+    });
+  </script>
+</div></main><footer class="w-full bg-surface-container-low"><div class="w-full px-margin py-space-xl"><div class="p-space-lg rounded-xl bg-surface-container-lowest mb-space-lg"><div class="flex items-start gap-space-sm"><span class="material-symbols-outlined text-on-surface-variant text-[20px] shrink-0 mt-0.5">shield</span><p class="font-body-sm text-body-sm text-on-surface-variant leading-relaxed">Estimates based on LESCO slab tariff schedule &amp; Lahore solar irradiance. Equipment costs benchmarked weekly. Independent advisory — we do not sell panels or take installer commissions.</p></div></div><div class="flex flex-col md:flex-row items-center justify-between gap-space-md pt-space-md"><div class="flex items-center gap-space-xs font-body-sm text-body-sm text-on-surface-variant"><span>© 2024 SolarAdvisor Pakistan. All rights reserved.</span></div><div class="flex flex-wrap items-center gap-space-lg"><a class="font-label-sm text-label-sm text-on-surface-variant hover:text-on-surface transition-colors" data-path="get-my-plan" href="#">Get My Plan</a><a class="font-label-sm text-label-sm text-on-surface-variant hover:text-on-surface transition-colors" data-path="ml-model-&amp;-accuracy" href="#">ML Model &amp; Accuracy</a><a class="font-label-sm text-label-sm text-on-surface-variant hover:text-on-surface transition-colors" data-path="tariff-&amp;-prices" href="#">Tariff &amp; Prices</a><a class="font-label-sm text-label-sm text-on-surface-variant hover:text-on-surface transition-colors" data-path="regulatory-framework" href="#">LESCO Regulations</a><a class="font-label-sm text-label-sm text-on-surface-variant hover:text-on-surface transition-colors" data-path="privacy-policy" href="#">Privacy Policy</a></div></div></div></footer></body></html>

@@ -1,0 +1,60 @@
+{
+  "date": "2026-11-11",
+  "homes": [
+    "H004",
+    "H005",
+    "H006",
+    "H007"
+  ],
+  "n_homes": 4,
+  "n_months": 52,
+  "excluded": [
+    "U001",
+    "U002"
+  ],
+  "seasonal": {
+    "base_temp": 20,
+    "mae": 103.6,
+    "r2": 0.841,
+    "error_percent": 33.0,
+    "mae_per_home": {
+      "H004": 219.0,
+      "H005": 104.6,
+      "H006": 60.4,
+      "H007": 30.4
+    },
+    "all_shapes_mae": {
+      "None": 113.2,
+      "18": 106.3,
+      "20": 103.6,
+      "22": 106.4
+    }
+  },
+  "house_model": {
+    "model": "LinearRegression",
+    "features": [
+      "avg_temp",
+      "sanctioned_load_kw"
+    ],
+    "mae": 443.0,
+    "r2": -1.18
+  },
+  "learning_curve": {
+    "2": {
+      "error_percent": 38.7,
+      "r2": 0.639,
+      "groups": 6
+    },
+    "3": {
+      "error_percent": 35.4,
+      "r2": 0.744,
+      "groups": 4
+    },
+    "4": {
+      "error_percent": 33.0,
+      "r2": 0.841,
+      "groups": 1
+    }
+  },
+  "ocr": "Tesseract on 6 bill photos: 39/72 months (54%). Clean online bills 12/12 and 12/12; House 1 photo 9/12; Zain photo 6/12; House 3 and Rana photos 0/12."
+}

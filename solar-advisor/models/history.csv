@@ -1,0 +1,6 @@
+time,n_houses,n_rows,seasonal_mae,seasonal_r2,house_model,house_mae,house_r2,house_old_mae,house_replaced
+2026-11-08T11:32:56,4,52,103.6,0.841,LinearRegression,443.0,-1.18,443.0,True
+2026-11-08T11:16:50,5,64,105.8,0.826,Ridge,235.0,0.285,303.4,True
+2026-11-10T10:41:11,6,76,103.6,0.826,Ridge,235.0,0.285,235.0,True
+2026-11-12T09:40:32,7,87,88.8,0.826,Ridge,235.0,0.285,235.0,True
+2026-11-12T09:48:52,6,75,77.5,0.872,Ridge,271.8,-0.121,271.8,True

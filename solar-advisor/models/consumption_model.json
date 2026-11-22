@@ -1,0 +1,31 @@
+{
+  "model": "Ridge",
+  "features": [
+    "avg_temp",
+    "sanctioned_load_kw",
+    "ac_total",
+    "house_size_marla",
+    "people"
+  ],
+  "n_houses": 6,
+  "n_rows": 75,
+  "mae": 271.8,
+  "r2": -0.121,
+  "mae_per_house": {
+    "H004": 909.1,
+    "H005": 140.7,
+    "H006": 80.3,
+    "H007": 79.7,
+    "H008": 138.9
+  },
+  "coefficients": {
+    "avg_temp": 21.71,
+    "sanctioned_load_kw": -64.56,
+    "ac_total": 66.67,
+    "house_size_marla": 14.05,
+    "people": 1.66,
+    "intercept": -377.86
+  },
+  "drop_outliers": false,
+  "trained_at": "2026-11-12T09:48:52"
+}

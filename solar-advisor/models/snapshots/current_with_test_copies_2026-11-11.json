@@ -1,0 +1,73 @@
+{
+  "date": "2026-11-11",
+  "homes": [
+    "H004",
+    "H005",
+    "H006",
+    "H007",
+    "U001",
+    "U002"
+  ],
+  "n_homes": 6,
+  "n_months": 76,
+  "excluded": [],
+  "seasonal": {
+    "base_temp": 18,
+    "mae": 103.6,
+    "r2": 0.826,
+    "error_percent": 48.1,
+    "mae_per_home": {
+      "H004": 267.1,
+      "H005": 118.2,
+      "H006": 52.9,
+      "H007": 39.8,
+      "U001": 69.3,
+      "U002": 69.2
+    },
+    "all_shapes_mae": {
+      "None": 105.9,
+      "18": 103.6,
+      "20": 104.0,
+      "22": 103.8
+    }
+  },
+  "house_model": {
+    "model": "Ridge",
+    "features": [
+      "avg_temp",
+      "sanctioned_load_kw",
+      "ac_total",
+      "house_size_marla",
+      "people"
+    ],
+    "mae": 235.0,
+    "r2": 0.285
+  },
+  "learning_curve": {
+    "2": {
+      "error_percent": 52.5,
+      "r2": 0.644,
+      "groups": 15
+    },
+    "3": {
+      "error_percent": 48.9,
+      "r2": 0.694,
+      "groups": 20
+    },
+    "4": {
+      "error_percent": 48.5,
+      "r2": 0.737,
+      "groups": 15
+    },
+    "5": {
+      "error_percent": 48.1,
+      "r2": 0.78,
+      "groups": 6
+    },
+    "6": {
+      "error_percent": 48.1,
+      "r2": 0.826,
+      "groups": 1
+    }
+  }
+}
