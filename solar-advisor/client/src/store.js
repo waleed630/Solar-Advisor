@@ -8,7 +8,8 @@ export const usePlanStore = defineStore('plan', {
   state: () => ({
     meters: [emptyMeter()],
     house: { house_size_marla: null, people: null, sanctioned_load_kw: null },
-    appliances: {}, // counts by key, filled from appliancesText by the parser
+    appliances: {}, // counts of known appliances by key, filled from appliancesText by the parser
+    applianceItems: [], // every appliance line, with optional watts / hours (also unknown appliances)
     appliancesText: '',
     roof: { type: 'concrete', area_sqft: null },
     hasSolar: false,
@@ -29,7 +30,10 @@ export const usePlanStore = defineStore('plan', {
         meters: this.meters.map((m) => ({
           months: Object.fromEntries(Object.entries(m.months).filter(([, u]) => u !== null && u !== '')),
         })),
-        house: { ...this.house, ac_total: this.acTotal, appliances: this.appliances },
+        house: {
+          ...this.house, ac_total: this.acTotal, appliances: this.appliances,
+          appliance_items: this.applianceItems.map(({ key, label, count, watts, hours, ton }) => ({ key, label, count, watts, hours, ton })),
+        },
         roof: this.roof,
         hasSolar: this.hasSolar,
         consent: this.consent,

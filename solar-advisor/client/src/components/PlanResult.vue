@@ -402,11 +402,18 @@ async function shareTo(target) {
           <div class="flex items-center justify-between mb-4"><span class="eyebrow">Load profile</span><span class="icon text-on-tertiary-container">ac_unit</span></div>
           <h3 class="font-display text-headline-sm font-semibold mb-1">Which appliances use the most (summer)</h3>
           <template v-if="result.appliances.summer">
-            <p class="text-body-sm text-on-surface-variant mb-4">Based on typical power and hours of use, scaled to your bill. Approximate.</p>
+            <p class="text-body-sm text-on-surface-variant mb-4">
+              Based on typical power and hours of use (or the watts and hours you gave), scaled to your bill. Approximate.
+            </p>
             <div class="flex flex-col gap-4">
               <div v-for="(a, i) in result.appliances.summer.items" :key="a.appliance">
                 <div class="flex justify-between gap-2 text-label-sm mb-1">
-                  <span class="font-medium">{{ a.count }} × {{ a.appliance }}</span>
+                  <span class="font-medium">
+                    {{ a.count }} × {{ a.appliance }}
+                    <span v-if="a.watts" class="text-on-surface-variant font-normal">· {{ a.watts.toLocaleString() }} W</span>
+                    <span v-if="a.how === 'yours'" class="chip-jade ml-1">your figures</span>
+                    <span v-else-if="a.how === 'guessed'" class="chip-amber ml-1" title="Power not given: a small typical value is used">watts guessed</span>
+                  </span>
                   <span class="font-semibold whitespace-nowrap num">{{ a.share_percent }}% (~{{ a.units }} units)</span>
                 </div>
                 <div class="w-full h-2 rounded-full bg-surface-container overflow-hidden">

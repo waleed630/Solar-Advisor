@@ -9,7 +9,7 @@ import pandas as pd
 from fastapi import FastAPI, File, HTTPException, UploadFile
 from pydantic import BaseModel, Field
 
-from core.appliances import APPLIANCES, breakdown
+from core.appliances import APPLIANCES, breakdown, items_from_counts
 from core.data import CONFIG, MODELS, SEASON_OF
 from core.predict import year_from_bill, year_from_house
 from core.solar import STRUCTURES, plan
@@ -26,12 +26,22 @@ class Meter(BaseModel):
     months: dict[int, Optional[float]] = Field(description="bill month (1-12) -> units")
 
 
+class ApplianceItem(BaseModel):
+    key: str = "custom"               # a key of APPLIANCES, or "custom" for one we have no figures for
+    label: Optional[str] = None       # what the user wrote, e.g. "Air purifier"
+    count: int = 1
+    watts: Optional[float] = None     # the user's power for one of them, if they gave it
+    hours: Optional[float] = None     # the user's hours per day, if they gave them
+    ton: Optional[float] = None       # AC size, if they gave it
+
+
 class House(BaseModel):
     house_size_marla: Optional[float] = None
     people: Optional[int] = None
     ac_total: Optional[int] = None
     sanctioned_load_kw: Optional[float] = None
-    appliances: dict[str, int] = {}
+    appliances: dict[str, int] = {}               # counts of known appliances (training data, AC count)
+    appliance_items: list[ApplianceItem] = []     # every line the user typed, with optional power and hours
 
 
 class Roof(BaseModel):
@@ -117,7 +127,8 @@ def make_plan(req: PlanRequest):
     result = plan(year_units, req.roof.area_sqft, req.roof.type, req.house.sanctioned_load_kw, cfg)
 
     # 4. Appliance breakdown
-    apps = breakdown(req.house.appliances, {s: v["avg_per_month"] for s, v in seasons.items()}) if req.house.appliances else {}
+    items = [i.model_dump() for i in req.house.appliance_items] or items_from_counts(req.house.appliances)
+    apps = breakdown(items, {s: v["avg_per_month"] for s, v in seasons.items()}) if items else {}
 
     seasonal = load_seasonal()
     house_meta = current_meta() or {}

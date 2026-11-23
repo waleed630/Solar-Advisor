@@ -7,6 +7,7 @@ import pytest
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 
+from core.appliances import breakdown, items_from_counts, profile  # noqa: E402
 from core.data import CONFIG, build_clean  # noqa: E402
 from core.ingest import already_in_data, validate  # noqa: E402
 from core.predict import year_from_bill  # noqa: E402
@@ -160,3 +161,33 @@ def test_homes_in_the_data_do_not_look_like_each_other():
 def test_same_bill_twice_is_detected():
     assert already_in_data([{"months": ZAIN}])
     assert not already_in_data([{"months": {m: 12345 for m in range(1, 13)}}])
+
+
+# ---------- appliances ----------
+
+SEASONS = {"summer": 300, "winter": 100, "mild": 180}
+
+
+def test_unknown_appliance_is_kept_with_a_guessed_power():
+    out = breakdown([{"key": "custom", "label": "air fryer", "count": 1}, {"key": "fans", "count": 2}], SEASONS)
+    names = {i["appliance"]: i for i in out["summer"]["items"]}
+    assert names["Air fryer"]["how"] == "guessed"
+    assert names["Ceiling fan"]["how"] == "typical"
+
+
+def test_users_watts_and_hours_replace_the_typical_figures():
+    label, watts, hours, how = profile({"key": "fans", "watts": 50, "hours": 6})
+    assert (watts, hours["summer"], how) == (50, 6, "yours")
+    assert hours["winter"] == 0                      # fans still off in winter: the pattern is kept
+
+
+def test_a_2_ton_ac_draws_more_than_a_1_5_ton_one():
+    _, w15, _, _ = profile({"key": "ac_noninverter"})
+    label, w2, _, _ = profile({"key": "ac_noninverter", "ton": 2})
+    assert w2 > w15 and "2 ton" in label
+
+
+def test_old_count_format_still_works():
+    out = breakdown(items_from_counts({"fans": 3, "fridge": 1}), SEASONS)
+    assert out["summer"]["bill_units"] == 300
+    assert sum(i["share_percent"] for i in out["summer"]["items"]) in range(99, 102)

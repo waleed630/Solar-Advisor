@@ -40,13 +40,24 @@ const PLOTS = [{ label: '5 Marla', v: 5 }, { label: '10 Marla', v: 10 }, { label
 
 // Appliances typed as free text: parse on every change and keep the counts in the store
 const parsed = computed(() => parseAppliances(plan.appliancesText))
-watch(parsed, (p) => (plan.appliances = p.counts), { immediate: true })
+watch(parsed, (p) => {
+  plan.appliances = p.counts
+  plan.applianceItems = p.items
+}, { immediate: true })
 const ICONS = [
-  ['ac_', 'ac_unit'], ['fans', 'mode_fan'], ['fridge', 'kitchen'], ['deep_freezer', 'kitchen'], ['motor', 'water_pump'],
-  ['iron', 'iron'], ['led_tv', 'tv'], ['lights', 'lightbulb'], ['washing', 'local_laundry_service'], ['microwave', 'microwave'],
-  ['geyser', 'water_heater'], ['heater', 'heat'], ['stove', 'cooking'], ['air_cooler', 'airwave'], ['ups', 'battery_charging_full'],
-  ['water_dispenser', 'water_drop'],
+  ['ac_', 'ac_unit'], ['exhaust_fan', 'mode_fan'], ['fans', 'mode_fan'], ['fridge', 'kitchen'], ['deep_freezer', 'kitchen'],
+  ['motor', 'water_pump'], ['iron', 'iron'], ['led_tv', 'tv'], ['lights', 'lightbulb'], ['washing', 'local_laundry_service'],
+  ['microwave', 'microwave'], ['geyser', 'water_heater'], ['heater', 'heat'], ['stove', 'cooking'], ['air_cooler', 'airwave'],
+  ['air_purifier', 'air_purifier'], ['ups', 'battery_charging_full'], ['water_dispenser', 'water_drop'], ['kettle', 'kettle'],
+  ['blender', 'blender'], ['laptop', 'laptop'], ['computer', 'desktop_windows'], ['router', 'router'], ['treadmill', 'directions_run'],
 ]
+// "1 × Air purifier · 50 W · 8 h/day"
+const itemText = (i) => {
+  const name = i.custom ? i.label : options.value.appliances[i.key] || i.key
+  // 1 and 1.5 ton are already in the AC's name
+  const extra = [i.ton && ![1, 1.5].includes(i.ton) && `${i.ton} ton`, i.watts && `${i.watts.toLocaleString()} W`, i.hours && `${i.hours} h/day`].filter(Boolean)
+  return `${i.count} × ${name}` + (extra.length ? ' · ' + extra.join(' · ') : '')
+}
 const iconFor = (key) => (ICONS.find(([k]) => key.startsWith(k) || key.includes(k)) || [, 'electrical_services'])[1]
 
 // Ready with a bill, or without one when load, house size and people are all given
@@ -210,22 +221,27 @@ async function calculate() {
               </label>
               <span class="text-label-sm text-secondary font-semibold">Understood as you type</span>
             </div>
-            <p class="text-body-sm text-on-surface-variant mb-2">Write them with commas, with how many of each. English or Roman Urdu is fine.</p>
+            <p class="text-body-sm text-on-surface-variant mb-2">
+              Write them with commas, with how many of each. English or Roman Urdu is fine. Any appliance works.
+              <span class="text-on-surface">Optional:</span> add its power or hours, e.g. <em>air purifier 50W</em>, <em>1 hp motor</em>, <em>heater 2kW</em>, <em>AC 8 hours</em>.
+            </p>
             <textarea
               id="appl" v-model="plan.appliancesText" rows="3" class="input resize-none"
-              placeholder="e.g. 2 AC 1.5 ton inverter, 5 pankhe, 1 fridge, 1 motor, 1 iron, 1 LED TV, 10 LED bulbs"
+              placeholder="e.g. 2 AC 1.5 ton inverter, 5 pankhe, 1 fridge, 1 motor, 1 LED TV, 10 LED bulbs, air purifier 50W"
             ></textarea>
             <span class="eyebrow block mt-3 mb-1.5">We understood:</span>
-            <div class="flex flex-wrap gap-1.5 min-h-[44px] p-2 bg-surface-container-low rounded-lg">
-              <span v-if="!parsed.recognised.length && !parsed.unknown.length" class="text-label-sm text-on-surface-variant p-1">Type your appliances above to see them here…</span>
+            <div class="flex flex-wrap gap-1.5 min-h-11 p-2 bg-surface-container-low rounded-lg">
+              <span v-if="!parsed.items.length && !parsed.unknown.length" class="text-label-sm text-on-surface-variant p-1">Type your appliances above to see them here…</span>
               <span
-                v-for="(n, key) in parsed.counts" :key="key"
-                class="inline-flex items-center gap-1 px-2.5 py-1 rounded-md bg-secondary-container text-on-secondary-container text-label-sm font-semibold shadow-sm"
-              ><span class="icon text-[14px]">{{ iconFor(key) }}</span>{{ n }} × {{ options.appliances[key] || key }}</span>
+                v-for="(i, n) in parsed.items" :key="n"
+                class="inline-flex items-center gap-1 px-2.5 py-1 rounded-md text-label-sm font-semibold shadow-sm"
+                :class="i.custom && !i.watts ? 'bg-tertiary-fixed text-on-tertiary-fixed' : 'bg-secondary-container text-on-secondary-container'"
+                :title="i.custom && !i.watts ? 'Power not known: a small typical value is used. Add watts for a better split, e.g. 100W' : ''"
+              ><span class="icon text-[14px]">{{ i.custom ? 'electrical_services' : iconFor(i.key) }}</span>{{ itemText(i) }}<span v-if="i.custom && !i.watts" class="font-medium opacity-80">· add watts?</span></span>
               <span
                 v-for="u in parsed.unknown" :key="'u' + u"
-                class="inline-flex items-center gap-1 px-2.5 py-1 rounded-md bg-tertiary-fixed text-on-tertiary-fixed text-label-sm font-medium shadow-sm"
-                title="Not recognised, left out"
+                class="inline-flex items-center gap-1 px-2.5 py-1 rounded-md bg-surface-container-high text-on-surface-variant text-label-sm font-medium"
+                title="No appliance name, left out"
               ><span class="icon text-[14px]">help</span>{{ u }} (left out)</span>
             </div>
           </div>
