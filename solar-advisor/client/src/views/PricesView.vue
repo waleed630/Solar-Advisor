@@ -3,9 +3,9 @@ import { onMounted, ref } from 'vue'
 import api, { errorText } from '../api'
 import { MONTHS } from '../store'
 import LedgerTabs from '../components/LedgerTabs.vue'
+import { useAuthStore } from '../auth'
 
-const token = ref(localStorage.getItem('adminToken'))
-const password = ref('')
+const auth = useAuthStore()
 const config = ref(null)
 const updatedAt = ref('')
 const msg = ref('')
@@ -40,31 +40,6 @@ async function load() {
   const { data } = await api.get('/settings')
   config.value = data.config
   updatedAt.value = new Date(data.updatedAt).toLocaleString()
-  if (token.value) {
-    try {
-      await api.get('/admin/check')
-    } catch {
-      logout() // saved login has expired
-    }
-  }
-}
-
-async function login() {
-  msg.value = ''
-  try {
-    const { data } = await api.post('/admin/login', { password: password.value })
-    localStorage.setItem('adminToken', data.token)
-    token.value = data.token
-    password.value = ''
-    await load()
-  } catch (e) {
-    msg.value = errorText(e)
-  }
-}
-
-function logout() {
-  localStorage.removeItem('adminToken')
-  token.value = null
 }
 
 async function save() {
@@ -97,37 +72,32 @@ onMounted(load)
   />
 
   <div class="flex flex-col gap-6">
-    <!-- Admin bar: log in, or who is editing -->
-    <div class="p-4 rounded-xl bg-surface-container-highest flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
+    <!-- Admin bar: only after admin login (log in from the header) -->
+    <div v-if="auth.isAdmin" class="p-4 rounded-xl bg-surface-container-highest flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
       <div class="flex items-center gap-3">
         <div class="w-10 h-10 rounded-lg bg-tertiary text-on-tertiary flex items-center justify-center shrink-0"><span class="icon">admin_panel_settings</span></div>
         <div>
           <div class="flex flex-wrap items-center gap-1.5">
-            <span class="card-title">{{ token ? 'Editing prices' : 'Saved prices (read only)' }}</span>
-            <span :class="token ? 'chip-jade' : 'chip-plain'">{{ token ? 'Admin' : 'View only' }}</span>
+            <span class="card-title">Saved prices</span>
+            <span class="chip-jade">Admin</span>
           </div>
           <p class="text-body-sm text-on-surface-variant">Last saved: {{ updatedAt || '…' }}. Changes apply to every new plan straight away.</p>
         </div>
       </div>
-      <div v-if="token" class="flex items-center gap-2 self-end md:self-auto shrink-0">
-        <button class="btn-white text-error hover:bg-error-container hover:text-on-error-container" @click="logout">Log out</button>
+      <div class="flex items-center gap-2 self-end md:self-auto shrink-0">
+        <button class="btn-white text-error hover:bg-error-container hover:text-on-error-container" @click="auth.logout()">Log out</button>
       </div>
-      <form v-else class="flex flex-col sm:flex-row items-stretch sm:items-center gap-2 w-full md:w-auto" @submit.prevent="login">
-        <label class="sr-only" for="pw">Admin password</label>
-        <input id="pw" v-model="password" type="password" class="input bg-surface-container-lowest sm:w-56" placeholder="Admin password" />
-        <button class="btn" type="submit"><span class="icon text-[18px]">lock_open</span>Log in</button>
-      </form>
     </div>
     <p v-if="msg" class="note-red"><span class="icon text-[18px]">error</span>{{ msg }}</p>
 
     <template v-if="config">
-      <fieldset :disabled="!token" class="grid grid-cols-1 lg:grid-cols-2 gap-6 min-w-0">
+      <fieldset :disabled="!auth.isAdmin" class="grid grid-cols-1 lg:grid-cols-2 gap-6 min-w-0">
         <!-- Equipment -->
         <div class="card flex flex-col gap-4">
           <div class="flex items-center justify-between">
             <div>
               <h2 class="card-title">Equipment prices</h2>
-              <p class="text-body-sm text-on-surface-variant">Market prices in Lahore. Check them often.</p>
+              <p class="text-body-sm text-on-surface-variant">Current market prices. Check them often.</p>
             </div>
             <span class="icon text-on-surface-variant">solar_power</span>
           </div>
@@ -149,7 +119,7 @@ onMounted(load)
           <div class="flex items-center justify-between">
             <div>
               <h2 class="card-title">Tariff (Rs per unit)</h2>
-              <p class="text-body-sm text-on-surface-variant">LESCO residential rates, taxes and the buyback rate.</p>
+              <p class="text-body-sm text-on-surface-variant">Residential rates, taxes and the buyback rate.</p>
             </div>
             <span class="icon text-on-surface-variant">bolt</span>
           </div>
@@ -198,7 +168,7 @@ onMounted(load)
       </fieldset>
 
       <!-- Actions -->
-      <div v-if="token" class="card flex flex-col sm:flex-row items-center justify-between gap-4">
+      <div v-if="auth.isAdmin" class="card flex flex-col sm:flex-row items-center justify-between gap-4">
         <div class="flex items-center gap-1.5 text-on-surface-variant text-body-sm">
           <span class="icon text-[18px]">history</span>Saving changes the prices used for every new plan. Plans already made stay the same.
         </div>

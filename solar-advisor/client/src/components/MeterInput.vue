@@ -9,7 +9,7 @@ const reading = ref(false)
 const ocrMsg = ref('')
 const ocrOk = ref(false)
 
-// Season label for each month tile (Lahore)
+// Season label for each month tile
 const SEASON = ['Winter', 'Winter', 'Spring', 'Spring', 'Pre-peak', 'Peak', 'Peak', 'Peak', 'Post-peak', 'Autumn', 'Winter', 'Winter']
 const isPeak = (i) => i >= 5 && i <= 7
 
@@ -103,7 +103,7 @@ async function readPhoto(e) {
       </h4>
       <p class="text-body-sm text-on-surface-variant max-w-md mt-1">Finds the 12-month bill history table. Always check the numbers it reads.</p>
       <div class="flex items-center gap-2 mt-4 flex-wrap justify-center">
-        <span v-for="t in ['Reads 12 months', 'Works with LESCO bills', 'Only units are kept']" :key="t"
+        <span v-for="t in ['Reads 12 months', 'Photo or screenshot', 'Only units are kept']" :key="t"
           class="inline-flex items-center gap-1 text-label-sm bg-surface-container-lowest px-2 py-1 rounded-md text-on-surface-variant shadow-sm">
           <span class="icon text-[14px] text-secondary">check_circle</span>{{ t }}
         </span>

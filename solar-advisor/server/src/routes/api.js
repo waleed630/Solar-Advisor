@@ -132,7 +132,8 @@ router.get('/admin/leads', requireAdmin, async (req, res) => {
 })
 
 // ---------- Model ----------
-router.get('/model', async (req, res) => {
+// Admin only: the ML Model page is shown only after admin login
+router.get('/model', requireAdmin, async (req, res) => {
   try {
     res.json((await ml().get('/model')).data)
   } catch (e) {

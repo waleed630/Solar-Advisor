@@ -91,8 +91,17 @@ def make_plan(req: PlanRequest):
         basis = "bill"
     else:
         details = req.house.model_dump()
-        if not details.get("sanctioned_load_kw"):
-            raise HTTPException(400, "Give at least one month of units, or the sanctioned load")
+        if details.get("ac_total") is None:
+            details["ac_total"] = 0
+        # Without a bill the house model needs every home detail it was trained on (weather is added by us);
+        # a missing one used to crash the model with a 500
+        names = {"sanctioned_load_kw": "sanctioned load", "house_size_marla": "house size (marla)",
+                 "people": "number of people", "ac_total": "number of ACs"}
+        needed = [f for f in (current_meta() or {}).get("features", ["sanctioned_load_kw"]) if f in names]
+        missing = [names[f] for f in needed if not details.get(f) and f != "ac_total"]
+        if missing:
+            raise HTTPException(400, "Without a bill, please give your " + ", ".join(missing)
+                                + ". Or enter at least one month of units from your bill.")
         year = year_from_house(details)
         house_mean = round(sum(v["units"] for v in year.values()) / 12)
         basis = "house details"

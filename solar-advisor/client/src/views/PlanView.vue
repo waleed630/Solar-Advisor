@@ -49,7 +49,9 @@ const ICONS = [
 ]
 const iconFor = (key) => (ICONS.find(([k]) => key.startsWith(k) || key.includes(k)) || [, 'electrical_services'])[1]
 
-const ready = computed(() => plan.monthsEntered > 0 || plan.house.sanctioned_load_kw > 0)
+// Ready with a bill, or without one when load, house size and people are all given
+const ready = computed(() => plan.monthsEntered > 0 ||
+  (plan.house.sanctioned_load_kw > 0 && plan.house.house_size_marla > 0 && plan.house.people > 0))
 const monthsSlots = computed(() => plan.meters.length * 12)
 
 // The ML service can take 10 to 20 seconds to start; keep trying for about 30 seconds before showing an error
@@ -68,9 +70,18 @@ onMounted(async () => {
 
 async function calculate() {
   error.value = ''
-  if (!plan.monthsEntered && !plan.house.sanctioned_load_kw) {
-    error.value = 'Enter at least one month of units, or your sanctioned load.'
-    return
+  // Without a bill the estimate comes from home details, so all three are needed
+  if (!plan.monthsEntered) {
+    const h = plan.house
+    const missing = [
+      !h.sanctioned_load_kw && 'sanctioned load',
+      !h.house_size_marla && 'house size (marla)',
+      !h.people && 'number of people',
+    ].filter(Boolean)
+    if (missing.length) {
+      error.value = `Enter at least one month of units from your bill. Without a bill, please give your ${missing.join(', ')}.`
+      return
+    }
   }
   loading.value = true
   try {
@@ -125,7 +136,7 @@ async function calculate() {
     <div class="flex flex-col md:flex-row md:items-end justify-between gap-4 mb-10">
       <div>
         <div class="flex items-center gap-1.5 text-on-tertiary-container text-label-md font-semibold mb-1">
-          <span class="icon text-[18px]">verified</span>LESCO tariff, Lahore weather
+          <span class="icon text-[18px]">verified</span>Your tariff, local weather
         </div>
         <h1 class="font-display text-display-sm md:text-display-lg font-bold tracking-tight text-on-surface">Your electricity bills</h1>
         <p class="text-body-lg text-on-surface-variant mt-1 max-w-3xl">
@@ -242,7 +253,7 @@ async function calculate() {
           <div class="flex items-center justify-between">
             <div class="flex items-center gap-1.5 text-on-surface text-label-md font-semibold">
               <span class="icon text-[20px]" :class="ready ? 'text-secondary' : 'text-on-tertiary-container'">{{ ready ? 'verified_user' : 'pending' }}</span>
-              {{ ready ? 'Ready for the next step' : 'Add units or your sanctioned load' }}
+              {{ ready ? 'Ready for the next step' : 'Add units, or load + size + people' }}
             </div>
             <span class="text-label-sm text-on-surface-variant font-mono">{{ plan.monthsEntered }}/{{ monthsSlots }} months</span>
           </div>

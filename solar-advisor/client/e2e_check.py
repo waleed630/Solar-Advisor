@@ -50,17 +50,28 @@ with sync_playwright() as p:
     page.wait_for_timeout(1500)
     page.screenshot(path=OUT / "5_result.png", full_page=True)
 
-    page.goto(URL + "/model")
+    # Before admin login: prices are view-only and the ML Model page is locked
+    page.goto(URL + "/prices")
+    page.wait_for_selector("text=Equipment prices")
+    page.wait_for_timeout(800)
+    page.screenshot(path=OUT / "7a_prices_locked.png", full_page=True)
+    page.goto(URL + "/model")                       # typed URL: sent home and asked for the password
+    page.wait_for_selector("#admin-pw")
+    page.keyboard.press("Escape")
+
+    # Admin login from the header dialog, then the ML Model page opens
+    page.goto(URL + "/prices")
+    page.click("header button:has-text('Login')")
+    page.fill("#admin-pw", "change-me")
+    page.click("[role=dialog] button:has-text('Log in')")
+    page.wait_for_selector("text=Saved prices")
+    page.wait_for_timeout(800)
+    page.screenshot(path=OUT / "7_prices.png", full_page=True)
+
+    page.click("header nav >> text=ML Model & Accuracy")
     page.wait_for_selector("text=How the model works")
     page.wait_for_timeout(800)
     page.screenshot(path=OUT / "6_model.png", full_page=True)
-
-    page.goto(URL + "/prices")
-    page.fill("input[type=password]", "change-me")
-    page.click("button:has-text('Log in')")
-    page.wait_for_selector("text=Equipment prices")
-    page.wait_for_timeout(800)
-    page.screenshot(path=OUT / "7_prices.png", full_page=True)
 
     # "Use my location" with a fake GPS position (Minar-e-Pakistan, a public landmark)
     geo = browser.new_context(viewport={"width": 1280, "height": 900}, permissions=["geolocation"],

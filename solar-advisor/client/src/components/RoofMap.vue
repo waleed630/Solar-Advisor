@@ -374,7 +374,7 @@ function locate() {
     <div class="flex flex-wrap gap-2 mb-3">
       <div class="relative flex-1 min-w-48">
         <span class="icon text-[18px] text-on-surface-variant absolute left-3 top-1/2 -translate-y-1/2 pointer-events-none">search</span>
-        <input v-model="query" class="input pl-9" placeholder="e.g. Amir Town, Lahore" @keyup.enter="search" />
+        <input v-model="query" class="input pl-9" placeholder="Search your area or street" @keyup.enter="search" />
       </div>
       <button class="btn-light" :disabled="searching" @click="search">Search</button>
       <button class="btn-light" :disabled="locating" title="Works best when you are at home" @click="locate">

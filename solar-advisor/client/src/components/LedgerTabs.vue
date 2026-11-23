@@ -1,6 +1,13 @@
 <script setup>
-// Shared header for the Model and Prices pages, with the two tabs from the theme
+// Shared header for the Model and Prices pages, with the two tabs from the theme.
+// The ML Model tab is locked until admin login.
+import AdminLink from './AdminLink.vue'
+
 defineProps({ title: String, text: String, crumb: String })
+const tabs = [
+  { to: '/prices', icon: 'verified_user', label: 'Tariff & Prices' },
+  { to: '/model', icon: 'neurology', label: 'ML Model', admin: true },
+]
 </script>
 
 <template>
@@ -13,12 +20,12 @@ defineProps({ title: String, text: String, crumb: String })
       <p class="text-body-md text-on-surface-variant max-w-2xl">{{ text }}</p>
     </div>
     <div class="inline-flex p-1.5 rounded-xl bg-surface-container shadow-sm self-start lg:self-auto">
-      <RouterLink
-        v-for="t in [{ to: '/model', icon: 'neurology', label: 'ML Model' }, { to: '/prices', icon: 'verified_user', label: 'Tariff & Prices' }]"
-        :key="t.to" :to="t.to"
+      <component
+        :is="t.admin ? AdminLink : 'RouterLink'"
+        v-for="t in tabs" :key="t.to" :to="t.to"
         class="flex items-center gap-1.5 px-4 py-2 rounded-lg text-label-md font-semibold transition-all"
         :class="$route.path === t.to ? 'bg-surface-container-lowest text-on-surface shadow-sm' : 'text-on-surface-variant hover:text-on-surface'"
-      ><span class="icon text-[18px]">{{ t.icon }}</span>{{ t.label }}</RouterLink>
+      ><span class="icon text-[18px]">{{ t.icon }}</span>{{ t.label }}</component>
     </div>
   </div>
 </template>
