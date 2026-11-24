@@ -70,7 +70,7 @@ Data rules (must stay true in any redesign): real bills only, never fake data; h
 White top bar: logo + "SolarAdvisor" (green), links **My plan**, **Model**, and **Prices** (right side). Content width `max-w-5xl`. Footer: "Estimates only. Prices and tariffs change often..."
 
 ### `/` Home: `views/HomeView.vue`
-Hero: "How much solar does your home need?", short text, big button **Get my solar plan**, line "Model trained on N real Lahore homes so far" (from `/api/model`). Three cards: 1. Your bill, 2. Your home and roof, 3. Your plan.
+Hero: "How much solar does your place need?", short text, big button **Get my solar plan**, line "Model trained on N real Lahore homes so far" (from `/api/model`). Three cards: 1. Your bill, 2. Your home and roof, 3. Your plan.
 
 ### `/plan` Wizard: `views/PlanView.vue` (the main screen)
 Step bar with 4 steps: **Bills, Your home, Roof, Result**.

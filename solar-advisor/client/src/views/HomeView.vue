@@ -37,7 +37,7 @@ const steps = [
           <span class="w-1.5 h-1.5 rounded-full bg-secondary"></span>100% Neutral &amp; Independent
         </div>
         <h1 class="font-display text-display-sm md:text-display-lg font-bold tracking-tight text-on-surface mb-4">
-          How much solar does your home <span class="text-on-tertiary-container">actually need?</span>
+          How much solar does your place <span class="text-on-tertiary-container">actually need?</span>
         </h1>
         <p class="text-body-lg text-on-surface-variant max-w-2xl mb-6 leading-relaxed">
           Upload your electricity bill. Get the system size, number of panels, cost, monthly saving and payback,
